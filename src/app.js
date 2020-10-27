@@ -1,6 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './app.css';
 import scrollama from 'scrollama';
+import Chapter from './components/chapter'
+import providers from './map-providers';
+import externalLayers from './map-external-layers';
 import { transformRequest } from './utils';
 import { LayerManager, Layer } from 'layer-manager/dist/components';
 import { PluginMapboxGl } from 'layer-manager';
@@ -19,19 +22,6 @@ const alignments = {
   'left': 'lefty',
   'center': 'centered',
   'right': 'righty'
-}
-
-function Chapter({ id, theme, title, image, description, currentChapterID }) {
-  const classList = id === currentChapterID ? 'step active' : 'step';
-  return (
-    <div id={id} className={classList}>
-      <div className={theme}>
-        {title && <h3 className="title">{title}</h3>}
-        {image && <img src={image} alt={title}></img>}
-        {description && <p>{description}</p>}
-      </div>
-    </div>
-  );
 }
 
 const App = (props) => {
@@ -90,18 +80,16 @@ const App = (props) => {
             const [markerLatitude, markerLongitude] = chapter.location.center;
             setMarkerPosition({ latitude: markerLatitude , longitude: markerLongitude });
           }
-          if (chapter.onChapterEnter.length > 0) {
-            // const externalLayers = chapter.onChapterEnter.filter(layer => layer.type);
-            // TODO: Add externalLayers to map
-            chapter.onChapterEnter.forEach((layer) =>
-              setLayerOpacity(layer)
-            );
-          }
+          chapter.onChapterEnter.filter((layer) => !layer.external).forEach((layer) =>
+            setLayerOpacity(layer)
+          );
         })
         .onStepExit((response) => {
-          var chapter = chapters.find((chap) => chap.id === response.element.id);
+          var chapter = chapters.find((chapter) => chapter.id === response.element.id);
           if (chapter.onChapterExit.length > 0) {
-            chapter.onChapterExit.forEach(setLayerOpacity);
+            chapter.onChapterExit
+              .filter((layer) => !layer.external)
+              .forEach(setLayerOpacity);
           }
         });
       window.addEventListener('resize', scroller.resize);
@@ -163,10 +151,14 @@ const App = (props) => {
             />
           )}
           {loaded && mapRef.current && (
-            <LayerManager map={mapRef.current.getMap()} plugin={PluginMapboxGl}>
-              {/* {activeLayers.map((l) => (
-                <Layer key={l.id} {...l} />
-              ))} */}
+            <LayerManager
+              map={mapRef.current.getMap()}
+              plugin={PluginMapboxGl}
+              providers={providers}
+            >
+              {externalLayers.map((layer) => (
+                <Layer key={layer.id} {...layer} />
+              ))}
             </LayerManager>
           )}
         </ReactMapGL>

@@ -28,7 +28,7 @@ export default {
           layer: 'amazon-ports',
           opacity: 1,
           type: 'carto'
-         }
+        }
         // {
         //      layer: 'amazon-ports',
         //      opacity: 1
@@ -52,8 +52,20 @@ export default {
         pitch: 35.5,
         bearing: 33.6
       },
-      onChapterEnter: [],
-      onChapterExit: []
+      onChapterEnter: [
+        {
+          layer: 'mongabay-stories',
+          external: true,
+          opacity: 1
+        }
+      ],
+      onChapterExit: [
+        {
+          layer: 'mongabay-stories',
+          external: true,
+          opacity: 0
+        }
+      ]
     },
     {
       id: 'third',
