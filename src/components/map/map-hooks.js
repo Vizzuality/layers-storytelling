@@ -1,14 +1,6 @@
 import { useEffect } from 'react';
 import scrollama from 'scrollama';
-
-const layerTypes = {
-  fill: ['fill-opacity'],
-  line: ['line-opacity'],
-  circle: ['circle-opacity', 'circle-stroke-opacity'],
-  symbol: ['icon-opacity', 'text-opacity'],
-  raster: ['raster-opacity'],
-  'fill-extrusion': ['fill-extrusion-opacity']
-};
+import { setOpacityOnAction } from './map-hooks-utils';
 
 export const useScrollFunctionality = ({
   loaded,
@@ -21,32 +13,6 @@ export const useScrollFunctionality = ({
   externalLayersOpacity
 }) => {
   useEffect(() => {
-    const getLayerPaintType = (layer) => {
-      var layerType = map.getLayer(layer).type;
-      return layerTypes[layerType];
-    }
-
-    const setLayerOpacity = (layer) => {
-      var paintProps = getLayerPaintType(layer.layer);
-      paintProps.forEach((prop) => {
-        map.setPaintProperty(layer.layer, prop, layer.opacity);
-      });
-    }
-
-    const setOpacityOnAction = (chapter, action) => {
-      const updatedExternalLayersOpacity = { ...externalLayersOpacity };
-      chapter[action]
-        .forEach((layer) => {
-          if (layer.external) {
-            updatedExternalLayersOpacity[layer.layer] = layer.opacity;
-          }
-        });
-        setExternalLayersOpacity(updatedExternalLayersOpacity);
-        chapter[action]
-          .filter((layer) => !layer.external)
-          .forEach((layer) => setLayerOpacity(layer));
-    };
-
     if (loaded && map) {
       const scroller = scrollama();
       scroller
@@ -66,11 +32,11 @@ export const useScrollFunctionality = ({
               longitude: markerLongitude
             });
           }
-          setOpacityOnAction(chapter, 'onChapterEnter');
+          setOpacityOnAction(chapter, 'onChapterEnter', map, externalLayersOpacity, setExternalLayersOpacity);
         })
         .onStepExit((response) => {
           const chapter = chapters.find((chapter) => chapter.id === response.element.id);
-          setOpacityOnAction(chapter, 'onChapterExit');
+          setOpacityOnAction(chapter, 'onChapterExit', map, externalLayersOpacity, setExternalLayersOpacity);
         });
 
         window.addEventListener('resize', scroller.resize);

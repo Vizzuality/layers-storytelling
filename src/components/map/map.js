@@ -47,7 +47,6 @@ const Map = (props) => {
     setExternalLayersOpacity,
     externalLayersOpacity
   });
-
   return (
     <div ref={mapContainerRef} className="mapboxgl-map">
       <ReactMapGL
@@ -58,7 +57,8 @@ const Map = (props) => {
         mapStyle={mapStyle}
         transformRequest={transformRequest}
         onLoad={() => setLoaded(true)}
-        onViewportChange={(nextViewport) => setViewport(nextViewport)}
+        onViewportChange={setViewport}
+        onResize={setViewport}
         scrollZoom={false}
         dragPan={false}
         dragRotate={false}
@@ -80,7 +80,7 @@ const Map = (props) => {
             {Object.keys(externalLayersOpacity).map((layerId) => (
               <Layer
                 key={layerId}
-                {...externalLayers.find(l => l.id === layerId)}
+                {...externalLayers.find((l) => l.id === layerId)}
                 opacity={externalLayersOpacity[layerId]}
               />
             ))}
