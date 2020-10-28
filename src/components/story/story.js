@@ -1,7 +1,13 @@
 import React from 'react';
-import Chapter from './chapter';
+import Chapter from '../chapter/chapter';
 
-const Story = ({ title, subtitle, byline, theme, chapters, alignments, alignment, currentChapterID, footer }) =>
+const alignments = {
+  left: 'lefty',
+  center: 'centered',
+  right: 'righty'
+};
+
+const Story = ({ title, subtitle, byline, theme, chapters, alignment, currentChapterID, footer }) =>
 <div id="story">
   {title && (
     <div id="header" className={theme}>
