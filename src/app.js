@@ -19,6 +19,7 @@ const App = (props) => {
   const { chapters, accessToken, style, theme, showMarkers, title, subtitle, byline, alignment, footer } = props;
   const [currentChapter, setCurrentChapter] = useState(chapters[0]);
   const [loaded, setLoaded] = useState(false);
+  const [externalLayersOpacity, setExternalLayersOpacity] = useState({});
   const [map, setMap] = useState(null);
   const mapRef = useRef(null);
   const mapContainerRef = useRef(null);
@@ -48,7 +49,9 @@ const App = (props) => {
     chapters,
     showMarkers,
     setCurrentChapter,
-    setMarkerPosition
+    setMarkerPosition,
+    setExternalLayersOpacity,
+    externalLayersOpacity
   });
 
   const { id: currentChapterID } = currentChapter;
@@ -97,8 +100,12 @@ const App = (props) => {
               plugin={PluginMapboxGl}
               providers={providers}
             >
-              {externalLayers.map((layer) => (
-                <Layer key={layer.id} {...layer} />
+              {Object.keys(externalLayersOpacity).map((layerId) => (
+                <Layer
+                  key={layerId}
+                  {...externalLayers.find(l => l.id === layerId)}
+                  opacity={externalLayersOpacity[layerId]}
+                />
               ))}
             </LayerManager>
           )}

@@ -7,6 +7,7 @@ Integrates Layer manager with mapbox/storytelling to be able to display external
 - Copy .env.template and rename it to .env
 - Add Mapbox [access token](https://docs.mapbox.com/help/glossary/access-token) to the new .env
 - Update config.js with the desired chapters and layers
+- External layers should have an ``` external: true ``` attribute. Eg. Resource Watch Layers
 - Update index.html and manifest.json inside public folder to update title and SEO
 
 ## Installation and dependencies

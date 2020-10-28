@@ -25,20 +25,17 @@ export default {
       },
       onChapterEnter: [
         {
-          layer: 'amazon-ports',
-          opacity: 1,
-          type: 'carto'
+          layer: 'mongabay-stories',
+          external: true,
+          opacity: 1
         }
-        // {
-        //      layer: 'amazon-ports',
-        //      opacity: 1
-        //  }
       ],
       onChapterExit: [
-        // {
-        //     layer: 'amazon-ports',
-        //     opacity: 0
-        // }
+        {
+          layer: 'mongabay-stories',
+          external: true,
+          opacity: 0
+        }
       ]
     },
     {
@@ -52,20 +49,8 @@ export default {
         pitch: 35.5,
         bearing: 33.6
       },
-      onChapterEnter: [
-        {
-          layer: 'mongabay-stories',
-          external: true,
-          opacity: 1
-        }
-      ],
-      onChapterExit: [
-        {
-          layer: 'mongabay-stories',
-          external: true,
-          opacity: 0
-        }
-      ]
+      onChapterEnter: [],
+      onChapterExit: []
     },
     {
       id: 'third',
