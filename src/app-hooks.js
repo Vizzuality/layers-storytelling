@@ -34,7 +34,6 @@ export const useScrollFunctionality = ({
     }
 
     const setOpacityOnAction = (chapter, action) => {
-      console.log(chapter[action])
       const updatedExternalLayersOpacity = { ...externalLayersOpacity };
       chapter[action]
         .forEach((layer) => {
