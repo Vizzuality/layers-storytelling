@@ -45,7 +45,8 @@ const Map = (props) => {
     setCurrentChapter,
     setMarkerPosition,
     setExternalLayersOpacity,
-    externalLayersOpacity
+    externalLayersOpacity,
+    externalLayers
   });
   return (
     <div ref={mapContainerRef} className="mapboxgl-map">
@@ -72,7 +73,7 @@ const Map = (props) => {
           />
         )}
         {loaded && mapRef.current && (
-          <LayerManager
+          <LayerManager // Only for external layers
             map={mapRef.current.getMap()}
             plugin={PluginMapboxGl}
             providers={providers}

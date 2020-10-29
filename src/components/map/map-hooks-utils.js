@@ -24,16 +24,17 @@ export const setOpacityOnAction = (
   action,
   map,
   externalLayersOpacity,
-  setExternalLayersOpacity
+  setExternalLayersOpacity,
+  externalLayersIds
 ) => {
   const updatedExternalLayersOpacity = { ...externalLayersOpacity };
   chapter[action].forEach((layer) => {
-    if (layer.external) {
+    if (externalLayersIds.includes(layer.layer)) {
       updatedExternalLayersOpacity[layer.layer] = layer.opacity;
     }
   });
   setExternalLayersOpacity(updatedExternalLayersOpacity);
   chapter[action]
-    .filter((layer) => !layer.external)
+    .filter((layer) => !externalLayersIds.includes(layer.layer))
     .forEach((layer) => setLayerOpacity(layer, map));
 };

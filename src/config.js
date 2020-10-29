@@ -26,8 +26,7 @@ export default {
       onChapterEnter: [
         {
           layer: 'Tree-cover-loss-2001-2019',
-          opacity: 1,
-          external: true
+          opacity: 1
         },
         {
           layer: 'amazon-ports',
@@ -60,8 +59,7 @@ export default {
         },
         {
           layer: 'Land-rights_1',
-          opacity: 1,
-          external: true
+          opacity: 1
         }
       ],
       onChapterExit: [

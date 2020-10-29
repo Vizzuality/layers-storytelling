@@ -10,10 +10,12 @@ export const useScrollFunctionality = ({
   setCurrentChapter,
   setMarkerPosition,
   setExternalLayersOpacity,
-  externalLayersOpacity
+  externalLayersOpacity,
+  externalLayers
 }) => {
   useEffect(() => {
     if (loaded && map) {
+      const externalLayersIds = externalLayers.map(l => l.id);
       const scroller = scrollama();
       scroller
         .setup({
@@ -32,11 +34,25 @@ export const useScrollFunctionality = ({
               longitude: markerLongitude
             });
           }
-          setOpacityOnAction(chapter, 'onChapterEnter', map, externalLayersOpacity, setExternalLayersOpacity);
+          setOpacityOnAction(
+            chapter,
+            'onChapterEnter',
+            map,
+            externalLayersOpacity,
+            setExternalLayersOpacity,
+            externalLayersIds
+          );
         })
         .onStepExit((response) => {
           const chapter = chapters.find((chapter) => chapter.id === response.element.id);
-          setOpacityOnAction(chapter, 'onChapterExit', map, externalLayersOpacity, setExternalLayersOpacity);
+          setOpacityOnAction(
+            chapter,
+            'onChapterExit',
+            map,
+            externalLayersOpacity,
+            setExternalLayersOpacity,
+            externalLayersIds
+          );
         });
 
         window.addEventListener('resize', scroller.resize);

@@ -11,12 +11,12 @@ const mockMap = {
 const initialExternalLayersOpacity = [];
 const action = 'onChapterEnter';
 const mapboxLayerId = 'mapbox-layer-id';
+const externalLayerId = 'external-layer-id';
 const chapter = {
   id: 'chapter',
   onChapterEnter: [
     {
-      layer: 'external-layer-id',
-      external: true,
+      layer: externalLayerId,
       opacity: 1
     },
     {
@@ -26,10 +26,10 @@ const chapter = {
   ]
 };
 
-const externalLayersOpacity = { 'external-layer-id': 1 };
+const externalLayersOpacity = { [externalLayerId]: 1 };
 describe('setOpacityOnAction', () => {
   it('uses callbacks to set opacity to layer', () => {
-    setOpacityOnAction(chapter, action, mockMap, initialExternalLayersOpacity, mockSetExternalLayersOpacity)
+    setOpacityOnAction(chapter, action, mockMap, initialExternalLayersOpacity, mockSetExternalLayersOpacity, [externalLayerId])
     expect(mockSetExternalLayersOpacity).toHaveBeenCalledWith(externalLayersOpacity);
     expect(mockSetPaintProperty).toHaveBeenCalledWith(mapboxLayerId, "fill-opacity", 1);
   });
