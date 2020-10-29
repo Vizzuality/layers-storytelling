@@ -1,6 +1,6 @@
 # layers-storytelling
 
-Integrates Layer manager with mapbox/storytelling to be able to display external layers
+Integrates [Vizzuality's Layer manager](https://github.com/Vizzuality/layer-manager) with [mapbox/storytelling](https://github.com/mapbox/storytelling) to be able to display external layers
 
 ## Instructions
 
