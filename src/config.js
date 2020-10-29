@@ -25,6 +25,11 @@ export default {
       },
       onChapterEnter: [
         {
+          layer: 'Tree-cover-loss-2001-2019',
+          opacity: 1,
+          external: true
+        },
+        {
           layer: 'amazon-ports',
           opacity: 1
         }
@@ -52,6 +57,11 @@ export default {
         {
           layer: 'soy-storage-facilities',
           opacity: 1
+        },
+        {
+          layer: 'Land-rights_1',
+          opacity: 1,
+          external: true
         }
       ],
       onChapterExit: [
