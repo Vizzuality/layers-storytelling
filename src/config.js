@@ -24,10 +24,10 @@ export default {
         bearing: -8.78
       },
       onChapterEnter: [
-        {
-          layer: 'Tree-cover-loss-2001-2019',
-          opacity: 1
-        },
+        // {
+        //   layer: 'Tree-cover-loss-2001-2019',
+        //   opacity: 1
+        // },
         {
           layer: 'amazon-ports',
           opacity: 1
@@ -60,7 +60,11 @@ export default {
         {
           layer: 'Land-rights_1',
           opacity: 1
-        }
+        },
+        {
+          layer: 'raster-test',
+          opacity: 1
+        },
       ],
       onChapterExit: [
         {

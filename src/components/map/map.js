@@ -1,11 +1,13 @@
 import React, { useState, useRef, useEffect } from 'react';
 import providers from './map-providers';
 import externalLayers from './map-external-layers';
-import { transformRequest } from './map-utils';
+import { transformRequest, parsedLayerConfig } from './map-utils';
 import { LayerManager, Layer } from 'layer-manager/dist/components';
 import { PluginMapboxGl } from 'layer-manager';
 import { useScrollFunctionality } from './map-hooks';
 import ReactMapGL, { Marker } from 'react-map-gl';
+
+const parsedExternalLayers = externalLayers.map((layerConfig) => parsedLayerConfig(layerConfig));
 
 const Map = (props) => {
   const { chapters, accessToken, mapStyle, showMarkers, setCurrentChapter } = props;
@@ -81,7 +83,7 @@ const Map = (props) => {
             {Object.keys(externalLayersOpacity).map((layerId) => (
               <Layer
                 key={layerId}
-                {...externalLayers.find((l) => l.id === layerId)}
+                {...parsedExternalLayers.find((l) => l.id === layerId)}
                 opacity={externalLayersOpacity[layerId]}
               />
             ))}
