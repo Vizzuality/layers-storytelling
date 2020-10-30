@@ -1,5 +1,3 @@
-import get from 'lodash/get';
-
 export const transformRequest = (url) => {
   const hasQuery = url.indexOf('?') !== -1;
   const suffix = hasQuery

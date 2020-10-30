@@ -1,7 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import providers from './map-providers';
 import externalLayers from './map-external-layers';
-import { transformRequest, parsedLayerConfig } from './map-utils';
+import { transformRequest } from './map-utils';
+import { parsedLayerConfig } from './map-parser';
 import { LayerManager, Layer } from 'layer-manager/dist/components';
 import { PluginMapboxGl } from 'layer-manager';
 import { useScrollFunctionality, useHandleResize } from './map-hooks';
