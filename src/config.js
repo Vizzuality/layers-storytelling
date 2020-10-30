@@ -13,25 +13,54 @@ export default {
   chapters: [
     {
       id: 'amazon-region',
-      title: 'Industrial Amazon',
-      image: '',
+      title: 'Turning the Amazon river into an industrial waterway',
+      image: 'chapter1_legend.png',
       description:
-        'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        'Brazil has been putting forward elaborate plans to exploit large portions of its 35,000-kilometers (22,000 miles) of waterway since the 1970s. But mostly privately funded projects went ahead, with just a third of the country’s navigable waterway potential now fulfilled.',
       location: {
-        center: [-58.0283, -2.7068],
-        zoom: 4.42,
-        pitch: 0.0,
-        bearing: -8.78
+        center: [-57.15869, -3.85456],
+        zoom: 4.70,
+        pitch: 43.50,
+        bearing: 54.23
       },
       onChapterEnter: [
-        // {
-        //   layer: 'Tree-cover-loss-2001-2019',
-        //   opacity: 1
-        // },
         {
           layer: 'amazon-ports',
           opacity: 1
+        },
+        {
+          layer: 'soy-storage-facilities',
+          opacity: 1
         }
+      ],
+      onChapterExit: [
+      {
+        layer: 'soy-storage-facilities',
+        opacity: 0.3
+      }
+    ],
+  },
+    {
+      id: 'amazon-region-2',
+      title: 'Following the road north',
+      image: 'chapter2_legend.png',
+      description:
+        'The northerward progression of road building and deforestation over the past decades has opened transit corridors to the Amazon River that run adjecent to Indigenous territories. Northern routes offer agribuiness firms an opportunity to bypass a long, rugged road journey, and the queues of trucks clogging Brazil’s southern commercial ports at Paranaguá and Santos',
+      location: {
+        center: [-57.15869, -3.85456],
+        zoom: 4.70,
+        pitch: 43.50,
+        bearing: 54.23
+      },
+      onChapterEnter: [
+        {
+          layer: 'Land-rights_1',
+          opacity: 1
+        },
+        {
+          layer: 'Tree-cover-loss-2001-2019',
+          opacity: 1
+        },
       ],
       onChapterExit: [
         // {
@@ -41,54 +70,46 @@ export default {
       ]
     },
     {
-      id: 'amazon-logistics',
-      title: 'Logistics hubs in the Amazon',
+      id: 'cerrado',
+      title: 'An agricultural heartland to the south',
       image: '',
       description:
-        'in July 2006, in an agreement between major trading companies working in Brazil that they would not buy soy from any area that was deforested after 2006. This agreement is the Soy Moratorium. The program was hugely successful but critics say this transformation was only possible because the Cerrado biome, which enjoys fewer protections, was right next to the forest. and could take in the growth that would otherwise have spread through the rainforest.',
+      'In July 2006, major trading companies working in Brazil made a voluntary agreement that they would not buy soy from any area that was deforested after 2006. The program has been hugely successful, but critics say this transformation was only possible because the Cerrado biome, a vast savanna lying to the east and south of the Amazon basin, could take in the growth that would otherwise have spread through the rainforest..',
       location: {
-        center: [-56.67828, -5.98458],
-        zoom: 5.09,
-        pitch: 40.5,
-        bearing: -22.38
+        center: [-52.74787, -14.10557],
+        zoom: 4.63,
+        pitch: 48.50,
+        bearing: 29.42
       },
       onChapterEnter: [
         {
-          layer: 'soy-storage-facilities',
-          opacity: 1
-        },
-        {
-          layer: 'Land-rights_1',
-          opacity: 1
-        },
-        {
-          layer: 'raster-test',
+          layer: 'brazilbiomes-8y9982',
           opacity: 1
         },
       ],
       onChapterExit: [
         {
-          layer: 'soy-storage-facilities',
-          opacity: 0.3
+          layer: 'brazilbiomes-8y9982',
+          opacity: 0.5
         }
       ]
     },
     {
-      id: 'cerrado',
-      title: 'The Forgotten Biome',
+      id: 'cerrado-2',
+      title: 'A forgotten biodiversity hotspot',
       image: '',
       description:
-        'in July 2006, in an agreement between major trading companies working in Brazil that they would not buy soy from any area that was deforested after 2006. This agreement is the Soy Moratorium. The program was hugely successful but critics say this transformation was only possible because the Cerrado biome, which enjoys fewer protections, was right next to the forest. and could take in the growth that would otherwise have spread through the rainforest.',
+      'Half of the Cerrado biome, one of the earth’s top biodiversity hotspots, has already been lost to cattle ranches and soy, corn and cotton plantations, with the savanna losing its native vegetation faster than any part of Brazil including the Amazon.',
       location: {
-        center: [-55.95516, -12.19992],
-        zoom: 4.37,
-        pitch: 0.0,
-        bearing: -8.78
+        center: [-52.74787, -14.10557],
+        zoom: 4.63,
+        pitch: 48.50,
+        bearing: 29.42
       },
       onChapterEnter: [
         {
-          layer: 'brazilbiomes-8y9982',
-          opacity: 0.75
+          layer: 'pasture-cerrado-2018',
+          opacity: 1
         },
         {
           layer: 'agricultura-agrosatelite-2014',
@@ -103,7 +124,11 @@ export default {
         {
           layer: 'agricultura-agrosatelite-2014',
           opacity: 0
-        }
+        },
+        {
+          layer: 'pasture-cerrado-2018',
+          opacity: 0
+        },
       ]
     },
     {
@@ -111,7 +136,7 @@ export default {
       title: 'Porto Velho',
       image: '',
       description:
-        'Typically trucks full of soybeans leave the state of Mato Grosso driving roughly 1,000 kilometers (600 miles) through the BR-364 road towards the public port at the city of Porto Velho, in Rondônia. There, Hermasa, an Amaggi subsidiary, built silos at a leased portion of the public port, to move soy from trucks to barges, at the Madeira river. More recently, Hermasa built its own private port in the area too. From Porto Velho,  barges navigate another 1,000 kilometers to get to a private Amaggi port at the City of Itacoatiara, from where big ships reach the Atlantic coast and sail to other countries.',
+        'Typically trucks full of soybeans leave the state of Mato Grosso driving roughly 1,000 kilometers (600 miles) through the BR-364 road towards the public port at the city of Porto Velho, in Rondônia. There, Hermasa, an Amaggi subsidiary, built silos at a leased portion of the public port, to move soy from trucks to barges, at the Madeira river. More recently, Hermasa built its own private port in the area too. From Porto Velho, barges navigate another 1,000 kilometers to get to a private Amaggi port at the City of Itacoatiara, from where big ships reach the Atlantic coast and sail to other countries.',
       location: {
         center: [-63.65107, -8.55536],
         zoom: 7.32,
@@ -126,7 +151,7 @@ export default {
       title: 'Itaituba',
       image: '',
       description:
-        'There are currently at least ten operational ports in Itaituba — none of which followed the Munduruku protocol. The most important ones for agribusiness are the ones operated by Cargill, Hidrovias do Brasil, Cianport and Unitapajós a joint-venture between Bunge and Amaggi. Together, the four companies invested over US $ 150 million in the installations.',
+        'There are currently at least ten operational ports in Itaituba, Since the 2013 law, at least ten industrial ports — mostly connected to agribusiness — have been built around the city of Itaituba, a transportation hub connecting the BR-163 highway with the Tapajós River. The most important ones for agribusiness are the ones operated by Cargill, Hidrovias do Brasil, Cianport and Unitapajós a joint-venture between Bunge and Amaggi. Together, the four companies have invested over US $ 150 million in these facilities.',
       location: {
         center: [-55.9728, -4.34176],
         zoom: 8.94,
