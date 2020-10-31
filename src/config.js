@@ -9,14 +9,14 @@ export default {
   title: '',
   subtitle: '',
   byline: '',
-  footer: 'Source: source citations, etc.',
+  footer: 'Cartography by Willie Shubert for Mongabay.',
   chapters: [
     {
       id: 'amazon-region',
       title: 'Turning the Amazon river into an industrial waterway',
       image: 'chapter1_legend.png',
       description:
-        'Brazil has been putting forward elaborate plans to exploit large portions of its 35,000-kilometers (22,000 miles) of waterway since the 1970s. But mostly privately funded projects went ahead, with just a third of the country’s navigable waterway potential now fulfilled.',
+        'Brazil’s government has had major plans to exploit large portions of its 35,000-kilometers (22,000-miles) of waterways since the 1970s. But it was mostly privately funded projects that went ahead, with just a third of the nation’s navigable waterway potential now fulfilled.',
       location: {
         center: [-57.15869, -3.85456],
         zoom: 4.70,
@@ -45,7 +45,7 @@ export default {
       title: 'Following the road north',
       image: 'chapter2_legend.png',
       description:
-        'The northerward progression of road building and deforestation over the past decades has opened transit corridors to the Amazon River that run adjecent to Indigenous territories. Northern routes offer agribuiness firms an opportunity to bypass a long, rugged road journey, and the queues of trucks clogging Brazil’s southern commercial ports at Paranaguá and Santos',
+        'The northward expansion of Amazon roadbuilding over recent decades opened truck/barge transit corridors to the Amazon River and Atlantic Ocean, but which run adjacent to Indigenous territories and cause deforestation. Northern routes do let agribusiness bypass a long, rugged road journey, and queues of trucks clogging Brazil’s southern ports at Paranaguá and Santos',
       location: {
         center: [-57.15869, -3.85456],
         zoom: 4.70,
@@ -60,7 +60,7 @@ export default {
         {
           layer: 'Tree-cover-loss-2001-2019',
           opacity: 1
-        },
+        }
       ],
       onChapterExit: [
         // {
@@ -72,9 +72,9 @@ export default {
     {
       id: 'cerrado',
       title: 'An agricultural heartland to the south',
-      image: '',
+      image: 'chapter3_legend.png',
       description:
-      'In July 2006, major trading companies working in Brazil made a voluntary agreement that they would not buy soy from any area that was deforested after 2006. The program has been hugely successful, but critics say this transformation was only possible because the Cerrado biome, a vast savanna lying to the east and south of the Amazon basin, could take in the growth that would otherwise have spread through the rainforest..',
+      'In July 2006, major commodities companies working in Brazil voluntarily agreed to not buy soy from any Amazon area deforested after that year. This Amazon Soy Moratorium was hugely successful, but critics say saving the rainforest was only possible because soy production was shifted to the vast Cerrado savanna biome, lying to the east and south of the Amazon basin.',
       location: {
         center: [-52.74787, -14.10557],
         zoom: 4.63,
@@ -90,16 +90,16 @@ export default {
       onChapterExit: [
         {
           layer: 'brazilbiomes-8y9982',
-          opacity: 0.5
+          opacity: 0.2
         }
       ]
     },
     {
       id: 'cerrado-2',
       title: 'A forgotten biodiversity hotspot',
-      image: '',
+      image: 'chapter4_legend.png',
       description:
-      'Half of the Cerrado biome, one of the earth’s top biodiversity hotspots, has already been lost to cattle ranches and soy, corn and cotton plantations, with the savanna losing its native vegetation faster than any part of Brazil including the Amazon.',
+      'Half of the Cerrado biome, one of the earth’s top biodiversity hotspots, has already been lost to cattle ranches and soy, corn and cotton plantations. Today, the savanna is losing its native vegetation faster than any part of Brazil, including the Amazon.',
       location: {
         center: [-52.74787, -14.10557],
         zoom: 4.63,
@@ -136,14 +136,19 @@ export default {
       title: 'Porto Velho',
       image: '',
       description:
-        'Typically trucks full of soybeans leave the state of Mato Grosso driving roughly 1,000 kilometers (600 miles) through the BR-364 road towards the public port at the city of Porto Velho, in Rondônia. There, Hermasa, an Amaggi subsidiary, built silos at a leased portion of the public port, to move soy from trucks to barges, at the Madeira river. More recently, Hermasa built its own private port in the area too. From Porto Velho, barges navigate another 1,000 kilometers to get to a private Amaggi port at the City of Itacoatiara, from where big ships reach the Atlantic coast and sail to other countries.',
+      'Soy-loaded trucks travel from Mato Grosso state 1,000 kilometers (600 miles) along the BR-364 highway to the city of Porto Velho public port in Rondônia state. There, Hermasa, an Amaggi subsidiary, built silos in a leased portion of the public port, and moved soy from trucks to Madeira River barges. More recently, Hermasa built its own private port in the city. From Porto Velho, barges sail 1,000 kilometers downstream to a private Amaggi port at the city of Itacoatiara. From there, big ships go downriver to the Atlantic coast and on to other nations.',
       location: {
-        center: [-63.65107, -8.55536],
-        zoom: 7.32,
-        pitch: 52.5,
-        bearing: 45.52
+        center: [-63.86148, -8.81658],
+        zoom: 7.73,
+        pitch: 60.00,
+        bearing: 51.99
       },
-      onChapterEnter: [],
+      onChapterEnter: [
+        {
+          layer: 'Tree-cover-loss-2001-2019',
+          opacity: 0.3
+        },
+      ],
       onChapterExit: []
     },
     {
@@ -151,12 +156,12 @@ export default {
       title: 'Itaituba',
       image: '',
       description:
-        'There are currently at least ten operational ports in Itaituba, Since the 2013 law, at least ten industrial ports — mostly connected to agribusiness — have been built around the city of Itaituba, a transportation hub connecting the BR-163 highway with the Tapajós River. The most important ones for agribusiness are the ones operated by Cargill, Hidrovias do Brasil, Cianport and Unitapajós a joint-venture between Bunge and Amaggi. Together, the four companies have invested over US $ 150 million in these facilities.',
+      'Since the passage of a 2013 law that allowed the creation of private river ports, at least ten industrial ports, mostly connected to agribusiness commodities giants, have been built around the city of Itaituba in Pará state, in a transportation hub linking the BR-163 highway with the Tapajós River. The most important ports for agribusiness are owned and operated by Cargill, Hidrovias do Brasil, Cianport and Unitapajós (a joint-venture between Bunge and Amaggi). Together, the companies have invested over US$150 million in these private facilities.',
       location: {
-        center: [-55.9728, -4.34176],
-        zoom: 8.94,
-        pitch: 35.5,
-        bearing: 33.6
+        center: [-56.39726, -3.78364],
+        zoom: 7.51,
+        pitch: 53.00,
+        bearing: 47.18
       },
       onChapterEnter: [],
       onChapterExit: []
@@ -166,12 +171,12 @@ export default {
       title: 'Santarém',
       image: '',
       description:
-        'Near the port complex of Santarém, the Maicá lake has been eyed by five companies as the next target for port development in the region, mostly connected to agribusiness. Though some projects have stalled after intense questioning by local activists throughout the last seven years, at least one has already been built, a fuel port. The company responsible for it, Atem’s, lacks the necessary permits, so, in March, prosecutors filed criminal charges against its representatives.',
+      'The Maicá Lake, near the port complex of Santarém, in Pará state, has been eyed by five mostly agribusiness companies as the next target for port development in the region. Some port projects have stalled after intense resistance by activists over the last seven years, but one has been built, a fuel port. However, the company responsible, Atem’s, lacked the required permits, so, in March, prosecutors filed criminal charges against the firm’s representatives.',
       location: {
-        center: [-54.66638, -2.40053],
-        zoom: 11.24,
-        pitch: 59.0,
-        bearing: 116.0
+        center: [-54.65835, -2.37194],
+        zoom: 10.20,
+        pitch: 60.00,
+        bearing: 101.56
       },
       onChapterEnter: [],
       onChapterExit: []
@@ -181,7 +186,7 @@ export default {
       title: 'Barcarena',
       image: '',
       description:
-        'The Barcarena port complex started with the public port of Vila do Conde, inaugurated in 1985. It was created to answer to demands from mining companies located in the region, such as Vale. The region started receiving more demand from agribusiness in the 2000’s, as trading companies established a route through the Amazon.',
+      'Pará state’s Barcarena port complex began with the public port of Vila do Conde, established in 1985. It was built to answer demands from the region’s mining companies, including Vale, Brazil’s largest mining firm. In the 2000’s, Barcarena’s river port complex received increased demand from agribusiness, as commodities firms established a route through the Amazon.',
       location: {
         center: [-48.67775, -1.52281],
         zoom: 11.17,
