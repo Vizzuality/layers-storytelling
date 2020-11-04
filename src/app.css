@@ -64,29 +64,14 @@ a, a:hover, a:visited {
   background-color: #fafafa;
 }
 
+.mongabay {
+  color: #222;
+  background-color: #fff;
+}
+
 .dark {
   color: #fafafa;
   background-color: #444;
-}
-
-.step {
-  padding-bottom: 50vh;
-  /* margin-bottom: 10vh; */
-  opacity: 0.25;
-}
-
-.step.active {
-  opacity: 0.9;
-}
-
-.step div {
-  padding:  25px 50px;
-  line-height: 25px;
-  font-size: 13px;
-}
-
-.step img {
-  width: 100%;
 }
 
 @media (max-width: 750px) {

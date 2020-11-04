@@ -4,8 +4,7 @@ import './index.css';
 import App from './app';
 import * as serviceWorker from './serviceWorker';
 import config from './config.js';
-
-
+import './tailwind.output.css';
 
 ReactDOM.render(<App {...config}/>, document.getElementById('root'));
 

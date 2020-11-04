@@ -13,9 +13,13 @@
     "react-map-gl": "^5.2.9",
     "react-scripts": "^3.3.0",
     "scrollama": "2.0.1",
+    "tailwindcss": "^1.9.6",
     "viewport-mercator-project": "6.1.1"
   },
   "scripts": {
+    "build:tailwind": "tailwindcss build src/tailwind.css -o src/tailwind.output.css",
+    "prestart": "npm run build:tailwind",
+    "prebuild": "npm run build:tailwind",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
