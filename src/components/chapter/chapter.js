@@ -1,13 +1,46 @@
 import React from 'react';
+import cx from 'classnames';
+import './chapter.css';
 
-function Chapter({ id, theme, title, image, description, currentChapterID }) {
-  const classList = id === currentChapterID ? 'step active' : 'step';
+function Chapter({ id, theme, title, image, images, description, currentChapterID }) {
+  const stepClasses = 'step max-w-md opacity-25';
+  const classList = id === currentChapterID ? `${stepClasses} active` : stepClasses;
+  const renderImage = (img) => (
+    <figure className="relative p-1">
+      <img
+        key={img.src}
+        src={img.src}
+        alt={title}
+        className={cx('image', { 'p-10': !img.title })}
+      />
+      {img.title && (
+        <figcaption
+          className={`absolute top-0 flex uppercase text-xs p-1 tracking-wider ${
+            img.whiteLegend ? 'text-white' : ''
+          }`}
+        >
+          <div className="flex mr-1">{img.title}</div>-
+          <div className="font-bold ml-1">{img.author}</div>
+        </figcaption>
+      )}
+    </figure>
+  );
   return (
     <div id={id} className={classList}>
       <div className={theme}>
-        {title && <h3 className="title">{title}</h3>}
-        {description && <p>{description}</p>}
-        {image && <img src={image} alt={title}></img>}
+        {images &&
+          images.filter((i) => i.position === 'top').map((i) => renderImage(i))}
+        {title && (
+          <div className="content text-base py-12 px-12 leading-6">
+            {title && <h3 className="text-xl font-bold pb-6">{title}</h3>}
+            {description && <p>{description}</p>}
+          </div>
+        )}
+        {image && renderImage({ src: image })}
+        {images &&
+          images
+            .filter((i) => i.position === 'bottom')
+            .map((i) => renderImage(i))}
       </div>
     </div>
   );

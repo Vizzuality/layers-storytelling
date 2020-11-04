@@ -10,6 +10,48 @@ Integrates [Vizzuality's Layer manager](https://github.com/Vizzuality/layer-mana
 - External layers config should be specified on the map-external-layers.js file
 - Update index.html and manifest.json inside public folder to update title and SEO
 
+## Config
+
+  Definition of the chapter options:
+
+  chapters: [
+      {
+        id: 'amazon-region', // Id of the mapbox or external layer
+        title: 'Turning the Amazon river into an industrial waterway', // Title of the chapter
+        images: [ // Array of images to be displayed on the chapter
+          { src: 'chapter1_legend.png', // File
+            position: 'top', // position of the image, top. before the text, bottom: after the text
+            title: 'legend', // Title in the image caption
+            author: 'Mongabay', // Author in the image caption
+            whiteLegend: true // Set to true if the image is dark for better visibility
+          },
+          { src: 'chapter1_legend.png', position: 'bottom'}],
+        description: // Main text of the chapter
+          'Brazil’s government has had major plans to exploit large portions of its 35,000-kilometers (22,000-miles) of waterways since the 1970s. But it was mostly privately funded projects that went ahead, with just a third of the nation’s navigable waterway potential now fulfilled.',
+        location: { // Start location
+          center: [-57.15869, -3.85456],
+          zoom: 4.70,
+          pitch: 43.50,
+          bearing: 54.23
+        },
+        onChapterEnter: [ // Layers and opacity to display on enter
+          {
+            layer: 'amazon-ports',
+            opacity: 1
+          },
+          {
+            layer: 'soy-storage-facilities',
+            opacity: 1
+          }
+        ],
+        onChapterExit: [ // Layers and opacity to display on exit
+        {
+          layer: 'soy-storage-facilities',
+          opacity: 0.3
+        }
+      ],
+    }
+
 ## Installation and dependencies
 
 Install dependencies listed in the `package.json` file:

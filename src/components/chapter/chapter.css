@@ -1,0 +1,7 @@
+.step {
+  padding-bottom: 50vh;
+}
+
+.step.active {
+  opacity: 0.95;
+}
