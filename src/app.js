@@ -31,7 +31,7 @@ const App = (props) => {
         setCurrentChapter={setCurrentChapter}
         setCurrentAction={setCurrentAction}
       />
-      {intro && <Intro title={intro.title}/>}
+      {intro && <Intro {...intro} />}
       <Story
         hasIntro={!!intro}
         chapters={chapters}
