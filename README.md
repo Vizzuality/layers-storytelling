@@ -12,12 +12,17 @@ Integrates [Vizzuality's Layer manager](https://github.com/Vizzuality/layer-mana
 
 ## Config
 
-  Definition of the chapter options:
+  Definition of the chapter options on the config file:
 
+  ```
   chapters: [
       {
         id: 'amazon-region', // Id of the mapbox or external layer
         title: 'Turning the Amazon river into an industrial waterway', // Title of the chapter
+        intro: { // Add this to have an intro screen
+          title: 'Amazon Soy Ports', Title of the intro
+          date: 'Nov. 10 2020' Date of publishing
+        },
         images: [ // Array of images to be displayed on the chapter
           { src: 'chapter1_legend.png', // File
             position: 'top', // position of the image, top. before the text, bottom: after the text
@@ -51,6 +56,7 @@ Integrates [Vizzuality's Layer manager](https://github.com/Vizzuality/layer-mana
         }
       ],
     }
+```
 
 ## Installation and dependencies
 
