@@ -11,7 +11,7 @@ function Chapter({ id, theme, title, image, images, description, currentChapterI
         key={img.src}
         src={img.src}
         alt={title}
-        className={cx('image', { 'p-10': !img.title })}
+        className={cx('image w-full', { 'p-10': !img.title })}
       />
       {img.title && (
         <figcaption

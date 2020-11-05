@@ -15,7 +15,7 @@ export default {
     {
       id: 'amazon-region',
       title: 'Turning the Amazon river into an industrial waterway',
-      images: [{ src: 'chapter1_legend.png', position: 'top', title: 'legend', author: 'Mongabay', whiteLegend: true }, { src: 'chapter1_legend.png', position: 'bottom'}],
+      images: [{ src: 'frog.png', position: 'top', title: 'frog', author: 'Mongabay', whiteLegend: true }, { src: 'chapter1_legend.png', position: 'bottom'}],
       description:
         'Brazil’s government has had major plans to exploit large portions of its 35,000-kilometers (22,000-miles) of waterways since the 1970s. But it was mostly privately funded projects that went ahead, with just a third of the nation’s navigable waterway potential now fulfilled.',
       location: {
