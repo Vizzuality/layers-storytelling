@@ -10,7 +10,14 @@ import ReactMapGL, { Marker } from 'react-map-gl';
 const parsedExternalLayers = externalLayers.map((layerConfig) => parsedLayerConfig(layerConfig));
 
 const Map = (props) => {
-  const { chapters, accessToken, mapStyle, showMarkers, setCurrentChapter } = props;
+  const {
+    chapters,
+    accessToken,
+    mapStyle,
+    showMarkers,
+    currentChapterId,
+    currentAction
+  } = props;
   const [loaded, setLoaded] = useState(false);
   const [externalLayersOpacity, setExternalLayersOpacity] = useState({});
   const [map, setMap] = useState(null);
@@ -44,7 +51,8 @@ const Map = (props) => {
     map,
     chapters,
     showMarkers,
-    setCurrentChapter,
+    currentChapterId,
+    currentAction,
     setMarkerPosition,
     setExternalLayersOpacity,
     externalLayersOpacity,

@@ -5,6 +5,7 @@ export default {
   accessToken: REACT_APP_MAPBOX_ACCESS_TOKEN,
   showMarkers: false,
   theme: 'mongabay',
+  intro: { title: 'Amazon Soy Ports'},
   alignment: 'left',
   title: '',
   subtitle: '',

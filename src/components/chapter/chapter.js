@@ -2,9 +2,9 @@ import React from 'react';
 import cx from 'classnames';
 import './chapter.css';
 
-function Chapter({ id, theme, title, image, images, description, currentChapterID }) {
+function Chapter({ id, theme, title, image, images, description, currentChapterId }) {
   const stepClasses = 'step max-w-md opacity-25';
-  const classList = id === currentChapterID ? `${stepClasses} active` : stepClasses;
+  const classList = id === currentChapterId ? `${stepClasses} active` : stepClasses;
   const renderImage = (img) => (
     <figure className="relative p-1">
       <img
