@@ -4,6 +4,7 @@ import Story from './components/story/story';
 import Map from './components/map/map';
 import Scroller from './components/scroller/scroller';
 import Intro from './components/intro/intro';
+import Logos from './components/logos/logos';
 
 const App = (props) => {
   const {
@@ -32,6 +33,7 @@ const App = (props) => {
         setCurrentAction={setCurrentAction}
       />
       {intro && <Intro {...intro} />}
+      <Logos />
       <Story
         hasIntro={!!intro}
         chapters={chapters}

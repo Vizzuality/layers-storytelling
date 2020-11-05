@@ -2,6 +2,11 @@
   background-image: url('/intro@2x.png');
 }
 
+.title {
+  font-size: 120px;
+  line-height: 120px;
+}
+
 .background-cover {
   backdrop-filter: blur(50px);
   -webkit-backdrop-filter: blur(50px);
