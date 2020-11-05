@@ -1,15 +1,14 @@
 import React from 'react';
 import './intro.css';
 
-const Intro = ({ title, date }) => {
+const Intro = ({ title, subtitle, date }) => {
   return (
     <div className="intro step absolute h-screen w-screen bg-cover bg-no-repeat">
       <div className="background-cover absolute h-screen w-screen flex flex-col justify-center items-center">
         <div className="container max-w-lg text-white text-center mb-10">
           <h1 className="title text-10xl font-serif mb-10">{title}</h1>
           <h2 className="text-lg font-regular">
-            Made by <span className="font-bold">Mongabay</span> in collaboration
-            with <span className="font-bold">Vizzuality</span>
+            {subtitle}
           </h2>
         </div>
         <div className="container max-w-xl text-white">

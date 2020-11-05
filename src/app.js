@@ -18,7 +18,8 @@ const App = (props) => {
     byline,
     alignment,
     footer,
-    intro
+    intro,
+    logos
   } = props;
   const [currentChapter, setCurrentChapter] = useState(chapters[0]);
   const [currentAction, setCurrentAction] = useState();
@@ -33,7 +34,7 @@ const App = (props) => {
         setCurrentAction={setCurrentAction}
       />
       {intro && <Intro {...intro} />}
-      <Logos />
+      <Logos logos={logos}/>
       <Story
         hasIntro={!!intro}
         chapters={chapters}

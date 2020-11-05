@@ -5,7 +5,19 @@ export default {
   accessToken: REACT_APP_MAPBOX_ACCESS_TOKEN,
   showMarkers: false,
   theme: 'mongabay',
-  intro: { title: 'Amazon Soy Ports', date: 'Nov. 10 2020' },
+  intro: {
+    title: 'Amazon Soy Ports',
+    subtitle:
+      'Amazon Soy Ports subtitle - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla congue ut nunc vel ultrices. Mauris diam mi, tincidunt sed odio sed, hendrerit tincidunt mauris. Proin consequat tellus id odio elementum, vestibulum laoreet justo dignissim.',
+    date: 'Nov. 10 2020'
+  },
+  logos: [
+    {
+      name: 'mongabay',
+      src: 'logos.png',
+      width: '200' // optional
+    }
+  ],
   alignment: 'left',
   title: '',
   subtitle: '',

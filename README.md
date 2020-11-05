@@ -23,6 +23,13 @@ Integrates [Vizzuality's Layer manager](https://github.com/Vizzuality/layer-mana
           title: 'Amazon Soy Ports', Title of the intro
           date: 'Nov. 10 2020' Date of publishing
         },
+        logos: [ // Array of logos to be shown on the bottom right of the screen
+          {
+            name: 'mongabay', // Name to add on the alt text
+            src: 'logos.png', // logo image in public folder
+            width: '200' // optional, size in pixels
+          }
+        ],
         images: [ // Array of images to be displayed on the chapter
           { src: 'chapter1_legend.png', // File
             position: 'top', // position of the image, top. before the text, bottom: after the text
