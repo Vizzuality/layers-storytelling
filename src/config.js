@@ -9,13 +9,32 @@ export default {
     title: 'Amazon Soy Ports',
     subtitle:
       'Amazon Soy Ports subtitle - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla congue ut nunc vel ultrices. Mauris diam mi, tincidunt sed odio sed, hendrerit tincidunt mauris. Proin consequat tellus id odio elementum, vestibulum laoreet justo dignissim.',
-    date: 'Nov. 10 2020'
+    date: 'Nov. 10 2020',
+    social: [
+      {
+        name: 'twitter',
+        src: 'twitter.svg',
+        href: 'https://twitter.com/mongabay'
+      },
+      {
+        name: 'facebook',
+        src: 'facebook.svg',
+        href: 'https://facebook.com/mongabay'
+      }
+    ]
   },
   logos: [
     {
       name: 'mongabay',
-      src: 'logos.png',
-      width: '200' // optional
+      src: 'mongabaylogo.png',
+      width: '140',
+      href: 'https://mongabay.org'
+    },
+    {
+      name: 'vizzuality',
+      src: 'vizzualitylogo.png',
+      width: '100',
+      href: 'https://vizzuality.com'
     }
   ],
   alignment: 'left',

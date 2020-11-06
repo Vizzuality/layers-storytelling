@@ -22,12 +22,21 @@ Integrates [Vizzuality's Layer manager](https://github.com/Vizzuality/layer-mana
         intro: { // Add this to have an intro screen
           title: 'Amazon Soy Ports', Title of the intro
           date: 'Nov. 10 2020' Date of publishing
+          height: '1300' // optional - height of the intro screen. default: full screen
+          social: [
+            {
+              name: 'twitter',
+              src: 'twitter.svg',
+              href: 'https://twitter.com/mongabay'
+            }
+          ]
         },
         logos: [ // Array of logos to be shown on the bottom right of the screen
           {
             name: 'mongabay', // Name to add on the alt text
             src: 'logos.png', // logo image in public folder
             width: '200' // optional, size in pixels
+            href: 'www.mongabay.org' // optional, link to url
           }
         ],
         images: [ // Array of images to be displayed on the chapter

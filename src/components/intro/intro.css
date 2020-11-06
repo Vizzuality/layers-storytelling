@@ -1,21 +1,8 @@
 .intro {
-  background-image: url('/intro@2x.png');
+  background-image: url('/intro.png');
 }
 
 .title {
   font-size: 120px;
   line-height: 120px;
-}
-
-.background-cover {
-  backdrop-filter: blur(50px);
-  -webkit-backdrop-filter: blur(50px);
-}
-
-.separator {
-  height: 1px;
-  opacity: 0.2;
-  width: 200px;
-  background-color: white;
-  display: block;
 }
