@@ -1,0 +1,8 @@
+.intro {
+  background-image: url('/intro.png');
+}
+
+.title {
+  font-size: 120px;
+  line-height: 120px;
+}

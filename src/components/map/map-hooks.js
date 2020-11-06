@@ -1,13 +1,13 @@
 import { useEffect } from 'react';
-import scrollama from 'scrollama';
 import { setOpacityOnAction } from './map-hooks-utils';
 
 export const useScrollFunctionality = ({
   loaded,
   map,
+  currentAction,
   chapters,
+  currentChapterId,
   showMarkers,
-  setCurrentChapter,
   setMarkerPosition,
   setExternalLayersOpacity,
   externalLayersOpacity,
@@ -15,48 +15,39 @@ export const useScrollFunctionality = ({
 }) => {
   useEffect(() => {
     if (loaded && map) {
-      const externalLayersIds = externalLayers.map(l => l.id);
-      const scroller = scrollama();
-      scroller
-        .setup({
-          step: '.step',
-          offset: 0.5,
-          progress: true
-        })
-        .onStepEnter((response) => {
-          const chapter = chapters.find((c) => c.id === response.element.id);
-          setCurrentChapter(chapter);
-          map.flyTo(chapter.location);
-          if (showMarkers) {
-            const [markerLatitude, markerLongitude] = chapter.location.center;
-            setMarkerPosition({
-              latitude: markerLatitude,
-              longitude: markerLongitude
-            });
-          }
-          setOpacityOnAction(
-            chapter,
-            'onChapterEnter',
-            map,
-            externalLayersOpacity,
-            setExternalLayersOpacity,
-            externalLayersIds
-          );
-        })
-        .onStepExit((response) => {
-          const chapter = chapters.find((chapter) => chapter.id === response.element.id);
-          setOpacityOnAction(
-            chapter,
-            'onChapterExit',
-            map,
-            externalLayersOpacity,
-            setExternalLayersOpacity,
-            externalLayersIds
-          );
-        });
+      const externalLayersIds = externalLayers.map((l) => l.id);
 
-        window.addEventListener('resize', scroller.resize);
+      if (currentChapterId && currentAction === 'enter') {
+        const chapter = chapters.find((c) => c.id === currentChapterId);
+        map.flyTo(chapter.location);
+        if (showMarkers) {
+          const [markerLatitude, markerLongitude] = chapter.location.center;
+          setMarkerPosition({
+            latitude: markerLatitude,
+            longitude: markerLongitude
+          });
+        }
+        setOpacityOnAction(
+          chapter,
+          'onChapterEnter',
+          map,
+          externalLayersOpacity,
+          setExternalLayersOpacity,
+          externalLayersIds
+        );
+      }
+      if (currentChapterId && currentAction === 'exit') {
+        const chapter = chapters.find((c) => c.id === currentChapterId);
+        setOpacityOnAction(
+          chapter,
+          'onChapterExit',
+          map,
+          externalLayersOpacity,
+          setExternalLayersOpacity,
+          externalLayersIds
+        );
+      }
     }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [loaded, map]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [loaded, map, currentAction, currentChapterId]);
 };

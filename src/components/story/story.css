@@ -1,0 +1,9 @@
+#story {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.withIntro {
+  padding-top: 150vh;
+}
