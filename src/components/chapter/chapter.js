@@ -1,8 +1,11 @@
 import React from 'react';
 import cx from 'classnames';
 import './chapter.css';
+import { useTranslation } from 'react-i18next';
 
 function Chapter({ id, theme, title, image, images, description, currentChapterId }) {
+  const { t } = useTranslation();
+
   const stepClasses = 'step max-w-md opacity-25';
   const classList = id === currentChapterId ? `${stepClasses} active` : stepClasses;
   const renderImage = (img) => (
@@ -19,8 +22,8 @@ function Chapter({ id, theme, title, image, images, description, currentChapterI
             img.whiteLegend ? 'text-white' : ''
           }`}
         >
-          <div className="flex mr-1">{img.title}</div>-
-          <div className="font-bold ml-1">{img.author}</div>
+          <div className="flex mr-1">{t(img.title)}</div>-
+          <div className="font-bold ml-1">{t(img.author)}</div>
         </figcaption>
       )}
     </figure>
@@ -32,8 +35,8 @@ function Chapter({ id, theme, title, image, images, description, currentChapterI
           images.filter((i) => i.position === 'top').map((i) => renderImage(i))}
         {title && (
           <div className="content text-base py-12 px-12 leading-6">
-            {title && <h3 className="text-xl font-bold pb-6">{title}</h3>}
-            {description && <p>{description}</p>}
+            {title && <h3 className="text-xl font-bold pb-6">{t(title)}</h3>}
+            {description && <p>{t(description)}</p>}
           </div>
         )}
         {image && renderImage({ src: image })}

@@ -65,6 +65,29 @@ Integrates [Vizzuality's Layer manager](https://github.com/Vizzuality/layer-mana
     }
 ```
 
+## Translations
+
+The app is using i18next and react-i18next npm packages.
+The text will be translated to the browser selected language.
+
+Define the translations in translations.js file on the root directory:
+
+You can have as many languages as you want just add all the keys with the selected [language code](https://www.w3schools.com/tags/ref_language_codes.asp) and pick every text displayed on the app as a key the translation as the value.
+
+E.g.
+
+```
+export default {
+  es: {
+    "Amazon Soy Ports": 'Puertos de soja en el Amazonas',
+    ...
+  },
+  de: {
+    ...
+  }
+};
+```
+
 ## Installation and dependencies
 
 Install dependencies listed in the `package.json` file:
