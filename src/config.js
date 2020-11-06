@@ -19,9 +19,6 @@ export default {
     }
   ],
   alignment: 'left',
-  title: '',
-  subtitle: '',
-  byline: '',
   footer: 'Cartography by Willie Shubert for Mongabay.',
   chapters: [
     {
