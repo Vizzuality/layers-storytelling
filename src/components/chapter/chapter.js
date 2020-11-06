@@ -35,8 +35,8 @@ function Chapter({ id, theme, title, image, images, description, currentChapterI
           images.filter((i) => i.position === 'top').map((i) => renderImage(i))}
         {title && (
           <div className="content text-base py-12 px-12 leading-6">
-            {title && <h3 className="text-xl font-bold pb-6">{t(title)}</h3>}
-            {description && <p>{t(description)}</p>}
+            {title && <h3 className="font-serif text-2xl pb-6">{t(title)}</h3>}
+            {description && <p className="text-sm leading-8" >{t(description)}</p>}
           </div>
         )}
         {image && renderImage({ src: image })}
