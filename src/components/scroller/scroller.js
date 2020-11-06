@@ -29,7 +29,6 @@ const Scroller = ({ chapters, setCurrentChapter, setCurrentAction }) => {
             setCurrentAction('enter');
           } else {
             // Intro Chapter
-            console.log('first chapter');
           }
         })
         .onStepExit((response) => {
@@ -41,7 +40,6 @@ const Scroller = ({ chapters, setCurrentChapter, setCurrentAction }) => {
             setCurrentAction('exit');
           } else {
             // Intro Chapter
-            console.log('first chapter');
           }
         });
     };

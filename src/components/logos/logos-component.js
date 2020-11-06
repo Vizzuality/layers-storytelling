@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Logos = ({ logos }) => {
-  console.log('logos', logos)
   return logos && logos.length ? (
     <div className="fixed bottom-0 right-0 z-10">
       {logos.map(logo => (

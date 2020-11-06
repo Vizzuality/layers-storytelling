@@ -9,7 +9,7 @@ const alignments = {
   right: 'righty'
 };
 
-const Story = ({ title, subtitle, byline, theme, chapters, alignment, currentChapterId, footer, hasIntro }) => console.log('c', currentChapterId) || (
+const Story = ({ title, subtitle, byline, theme, chapters, alignment, currentChapterId, footer, hasIntro }) => (
   <div id="story" className={cx({ "withIntro": hasIntro })}>
     {title && (
       <div id="header" className={theme}>
