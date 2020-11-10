@@ -2,7 +2,7 @@ import React from 'react';
 import cx from 'classnames';
 import Chapter from '../chapter/chapter';
 import { useTranslation } from 'react-i18next';
-import './story.css';
+import './story.scss';
 
 const alignments = {
   left: 'lefty',
@@ -33,7 +33,7 @@ const Story = ({ title, subtitle, byline, theme, chapters, alignment, currentCha
         ))}
       </div>
       {footer && (
-        <div id="footer" className={theme}>
+        <div id="footer" className={`footer-${theme}`}>
           <p>{t(footer)}</p>
         </div>
       )}

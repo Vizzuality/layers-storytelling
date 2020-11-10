@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './app.css';
+import './app.scss';
 import Story from './components/story/story';
 import Map from './components/map/map';
 import Scroller from './components/scroller/scroller';

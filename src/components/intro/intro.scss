@@ -1,0 +1,28 @@
+.intro {
+  background-image: url('/intro2.jpg');
+}
+
+.title {
+  font-size: 40px;
+  line-height: 40px;
+}
+
+@media (min-width: 640px) and (min-height: 700px) {
+  .title {
+    font-size: 120px;
+    line-height: 120px;
+  }
+}
+.arrow-animate {
+  animation: arrow-animate 1s ease-in-out infinite;
+}
+
+@keyframes arrow-animate {
+  from {
+    opacity: 1;
+  }
+  to {
+    transform: translate(0, 6px);
+    opacity: 0.5;
+  }
+}

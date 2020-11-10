@@ -49,15 +49,27 @@ export default {
     {
       id: 'amazon-region',
       title: 'Turning the Amazon river into an industrial waterway',
+      legend: [
+        {
+          title: 'Industrial port facilities in the Amazon basin',
+          color: '#7259A8',
+          border: 'black',
+          type: 'circle'
+        },
+        {
+          title: 'Soy Storage Facilities',
+          color: '#BAA4F5',
+          type: 'circle'
+        }
+      ],
+      sources: 'Sources: ANTAQ (Ports), Trase.earth (storage facilities)',
       images: [
         {
           src: 'port1.jpg',
           position: 'top',
           title: 'Santarém port',
-          author: 'Thais Borges',
-          whiteLegend: true
-        },
-        { src: 'chapter1_legend.png', position: 'bottom' }
+          author: 'Thais Borges'
+        }
       ],
       description:
         'Brazil’s government has had major plans to exploit large portions of its 35,000-kilometers (22,000-miles) of waterways since the 1970s. Yet, it was mostly privately funded projects that went ahead. Today, the nation’s navigable waterways represent a third of its potential.',
@@ -87,7 +99,18 @@ export default {
     {
       id: 'amazon-region-2',
       title: 'Following the road north',
-      image: 'chapter2_legend.png',
+      legend: [
+        {
+          title: 'Tree cover loss 2001-2019',
+          color: '#DC6B9C'
+        },
+        {
+          title: 'Indigenous territories',
+          color: '#46B6D2'
+        }
+      ],
+      sources:
+        'Sources: UND/Google/USGS/NASA (Tree cover loss), Global Forest Watch. "Land rights"',
       description:
         'The northward expansion of Amazon roadbuilding over recent decades opened truck/barge transit corridors to the Amazon River and Atlantic Ocean that run adjacent to Indigenous territories and cause deforestation. However, these northern routes, do let agribusiness bypass a long, rugged road journey, and the queues of trucks clogging Brazil’s southern ports at Paranaguá and Santos.',
       location: {
@@ -108,8 +131,8 @@ export default {
       ],
       onChapterExit: [
         {
-            layer: 'Land-rights_1',
-            opacity: 0
+          layer: 'Land-rights_1',
+          opacity: 0
         },
         {
           layer: 'Tree-cover-loss-2001-2019',
@@ -120,7 +143,6 @@ export default {
     {
       id: 'cerrado',
       title: 'An agricultural heartland to the south',
-      image: 'chapter3_legend.png',
       description:
         'In July 2006, major commodities companies working in Brazil voluntarily agreed to cease purchases of soy produced in any Amazon area deforested after that year. The Amazon Soy Moratorium was hugely successful, but critics say saving the rainforest was only possible because soy production shifted to the vast Cerrado savanna, which lies to the south and east of the Amazon basin.',
       location: {
@@ -129,6 +151,17 @@ export default {
         pitch: 48.5,
         bearing: 29.42
       },
+      legend: [
+        {
+          title: 'Cerrado biome boundary',
+          color: '#F6E8A8'
+        },
+        {
+          title: 'Amazon biome boundary',
+          color: '#92CE69'
+        }
+      ],
+      sources: 'Sources: Brasil Ministerio do Meio Ambiente / IGBE',
       onChapterEnter: [
         {
           layer: 'brazilbiomes-8y9982',
@@ -144,7 +177,6 @@ export default {
           layer: 'Tree-cover-loss-2001-2019',
           opacity: 0
         }
-
       ]
     },
     {

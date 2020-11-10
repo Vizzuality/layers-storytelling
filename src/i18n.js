@@ -12,14 +12,16 @@ i18n
       acc[lang] = { translations: translations[lang] };
       return acc;
     }, {}),
+    // allow keys to be phrases having `:`, `.`
+    nsSeparator: false,
+    keySeparator: false,
+
     fallbackLng: 'en',
     debug: true,
 
     // have a common namespace used around the full app
     ns: ['translations'],
     defaultNS: 'translations',
-
-    keySeparator: false, // we use content as keys
 
     interpolation: {
       escapeValue: false,
