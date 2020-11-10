@@ -9,7 +9,7 @@ function Chapter({ id, theme, title, image, images, description, currentChapterI
   const stepClasses = 'step max-w-md opacity-25';
   const classList = id === currentChapterId ? `${stepClasses} active` : stepClasses;
   const renderImage = (img) => (
-    <figure className="relative p-1">
+    <figure key={img.src} className="relative p-1">
       <img
         key={img.src}
         src={img.src}
@@ -32,12 +32,12 @@ function Chapter({ id, theme, title, image, images, description, currentChapterI
   const renderLegend = (legend, sources) => (
     <div className="text-sm pb-12 px-12">
       {legend.map((l) => (
-        <div className="flex items-center mb-4">
+        <div key={l.title} className="flex items-center mb-4">
           <span
             className="w-8 h-8 mr-4"
             style={{
-              'border-radius': l.type === 'circle' ? '50%' : 'none',
-              'background-color': l.color,
+              'borderRadius': l.type === 'circle' ? '50%' : 'none',
+              'backgroundColor': l.color,
               border: l.border ? `solid 2px ${l.border}` : 'none'
             }}
           />
