@@ -1,5 +1,5 @@
 import React from 'react';
-import './intro.css';
+import './intro.scss';
 import SocialIcons from '../../components/social-icons/social-icons';
 import { ReactComponent as Mouse } from '../../assets/mouse.svg';
 import { ReactComponent as Arrow } from '../../assets/arrow.svg';
