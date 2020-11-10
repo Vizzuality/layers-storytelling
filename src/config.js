@@ -54,8 +54,7 @@ export default {
           src: 'port1.jpg',
           position: 'top',
           title: 'Santarém port',
-          author: 'Thais Borges',
-          whiteLegend: true
+          author: 'Thais Borges'
         },
         { src: 'chapter1_legend.png', position: 'bottom' }
       ],

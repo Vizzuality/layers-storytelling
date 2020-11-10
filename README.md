@@ -44,7 +44,6 @@ Integrates [Vizzuality's Layer manager](https://github.com/Vizzuality/layer-mana
             position: 'top', // position of the image, top. before the text, bottom: after the text
             title: 'legend', // Title in the image caption
             author: 'Mongabay', // Author in the image caption
-            whiteLegend: true // Set to true if the image is dark for better visibility
           },
           { src: 'chapter1_legend.png', position: 'bottom'}],
         description: // Main text of the chapter

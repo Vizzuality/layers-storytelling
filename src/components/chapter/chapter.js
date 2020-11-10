@@ -18,9 +18,9 @@ function Chapter({ id, theme, title, image, images, description, currentChapterI
       />
       {img.title && (
         <figcaption
-          className={`absolute top-0 flex uppercase text-xs p-1 tracking-wider ${
-            img.whiteLegend ? 'text-white' : ''
-          }`}
+          className={
+            'absolute top-0 mt-1 p-1 flex uppercase tracking-wider bg-black bg-opacity-50 text-white text-xs'
+          }
         >
           <div className="flex mr-1">{t(img.title)}</div>-
           <div className="font-bold ml-1">{t(img.author)}</div>
