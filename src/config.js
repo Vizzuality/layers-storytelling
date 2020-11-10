@@ -139,7 +139,12 @@ export default {
         {
           layer: 'brazilbiomes-8y9982',
           opacity: 0.2
+        },
+        {
+          layer: 'Tree-cover-loss-2001-2019',
+          opacity: 0
         }
+
       ]
     },
     {
