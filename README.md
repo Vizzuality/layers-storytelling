@@ -45,7 +45,21 @@ Integrates [Vizzuality's Layer manager](https://github.com/Vizzuality/layer-mana
             title: 'legend', // Title in the image caption
             author: 'Mongabay', // Author in the image caption
           },
-          { src: 'chapter1_legend.png', position: 'bottom'}],
+          { src: 'chapter1_legend.png', position: 'bottom'}
+        ],
+        legend: [
+          {
+            title: 'Industrial port facilities in the Amazon basin',
+            color: '#7259A8',
+            border: 'black', // Not required. Default is none
+            type: 'circle' // Default is square
+          },
+          {
+            title: 'Soy Storage Facilities',
+            color: '#BAA4F5'
+          }
+        ],
+        sources: 'Sources: ANTAQ (Ports), Trase.earth (storage facilities)', // Sources line below the legend
         description: // Main text of the chapter
           'Brazil’s government has had major plans to exploit large portions of its 35,000-kilometers (22,000-miles) of waterways since the 1970s. But it was mostly privately funded projects that went ahead, with just a third of the nation’s navigable waterway potential now fulfilled.',
         location: { // Start location
