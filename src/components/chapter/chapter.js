@@ -3,7 +3,7 @@ import cx from 'classnames';
 import './chapter.css';
 import { useTranslation } from 'react-i18next';
 
-function Chapter({ id, theme, title, image, images, description, currentChapterId }) {
+function Chapter({ id, theme, title, image, images, description, currentChapterId, legend, sources }) {
   const { t } = useTranslation();
 
   const stepClasses = 'step max-w-md opacity-25';
@@ -28,6 +28,26 @@ function Chapter({ id, theme, title, image, images, description, currentChapterI
       )}
     </figure>
   );
+
+  const renderLegend = (legend, sources) => (
+    <div className="text-sm pb-12 px-12">
+      {legend.map((l) => (
+        <div className="flex items-center mb-4">
+          <span
+            className="w-8 h-8 mr-4"
+            style={{
+              'border-radius': l.type === 'circle' ? '50%' : 'none',
+              'background-color': l.color,
+              border: l.border ? `solid 2px ${l.border}` : 'none'
+            }}
+          />
+          <span>{l.title}</span>
+        </div>
+      ))}
+      {sources && <div className="ml-12">{t(sources)}</div>}
+    </div>
+  );
+
   return (
     <div id={id} className={classList}>
       <div className={theme}>
@@ -36,9 +56,12 @@ function Chapter({ id, theme, title, image, images, description, currentChapterI
         {title && (
           <div className="content text-base py-12 px-12 leading-6">
             {title && <h3 className="font-serif text-2xl pb-6">{t(title)}</h3>}
-            {description && <p className="text-sm leading-8" >{t(description)}</p>}
+            {description && (
+              <p className="text-sm leading-8">{t(description)}</p>
+            )}
           </div>
         )}
+        {legend && renderLegend(legend, sources)}
         {image && renderImage({ src: image })}
         {images &&
           images
