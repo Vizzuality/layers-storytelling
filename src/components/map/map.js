@@ -24,19 +24,20 @@ const Map = (props) => {
   const mapRef = useRef(null);
   const mapContainerRef = useRef(null);
   const initialLocation = chapters[0].location;
-  const [initialLatitude, initialLongitude] = initialLocation.center;
+  const [initialLongitude, initialLatitude] = initialLocation.center;
   const [markerPosition, setMarkerPosition] = useState({
     latitude: initialLatitude,
     longitude: initialLongitude
   });
   const initialViewport = {
-    latitude: initialLatitude,
     longitude: initialLongitude,
+    latitude: initialLatitude,
     pitch: initialLocation.pitch,
     bearing: initialLocation.bearing,
     zoom: initialLocation.zoom
   };
   const [viewport, setViewport] = useState(initialViewport);
+  const updateViewport = newViewport => setViewport({ ...viewport, ...newViewport });
 
   // Set map when loaded
   useEffect(() => {
@@ -68,8 +69,8 @@ const Map = (props) => {
         mapStyle={mapStyle}
         transformRequest={transformRequest}
         onLoad={() => setLoaded(true)}
-        onViewportChange={setViewport}
-        onResize={setViewport}
+        onViewportChange={updateViewport}
+        onResize={updateViewport}
         scrollZoom={false}
         dragPan={false}
         dragRotate={false}

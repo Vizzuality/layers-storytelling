@@ -6,7 +6,6 @@ import { ReactComponent as Arrow } from '../../assets/arrow.svg';
 import { useTranslation } from 'react-i18next';
 
 const Intro = ({ title, subtitle, date, social, height }) => {
-  console.log('-------------------------', height, social)
   const { t } = useTranslation();
   const heightStyle = height ? { height: `${height}px` } : undefined;
   const separatorClasses = "h-px bg-white block flex-1 opacity-25";
