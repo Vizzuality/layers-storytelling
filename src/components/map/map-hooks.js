@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { setOpacityOnAction } from './map-hooks-utils';
 
 export const useScrollFunctionality = ({
@@ -50,4 +50,21 @@ export const useScrollFunctionality = ({
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loaded, map, currentAction, currentChapterId]);
+};
+
+export const useHandleResize = (callback) => {
+  const [size, setSize] = useState([0, 0]);
+  useEffect(() => {
+    const getSize = () => {
+      if (size[0] !== window.innerWidth || size[1] !== window.innerHeight) {
+        callback({ width: window.innerWidth, height: window.innerHeight });
+        setSize([window.innerWidth, window.innerHeight]);
+      }
+    }
+    getSize();
+    window.addEventListener("resize", getSize);
+    return () => window.removeEventListener("resize", getSize);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  return size;
 };

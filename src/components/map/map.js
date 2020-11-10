@@ -4,7 +4,7 @@ import externalLayers from './map-external-layers';
 import { transformRequest, parsedLayerConfig } from './map-utils';
 import { LayerManager, Layer } from 'layer-manager/dist/components';
 import { PluginMapboxGl } from 'layer-manager';
-import { useScrollFunctionality } from './map-hooks';
+import { useScrollFunctionality, useHandleResize } from './map-hooks';
 import ReactMapGL, { Marker } from 'react-map-gl';
 
 const parsedExternalLayers = externalLayers.map((layerConfig) => parsedLayerConfig(layerConfig));
@@ -18,6 +18,7 @@ const Map = (props) => {
     currentChapterId,
     currentAction
   } = props;
+
   const [loaded, setLoaded] = useState(false);
   const [externalLayersOpacity, setExternalLayersOpacity] = useState({});
   const [map, setMap] = useState(null);
@@ -38,6 +39,8 @@ const Map = (props) => {
   };
   const [viewport, setViewport] = useState(initialViewport);
   const updateViewport = newViewport => setViewport({ ...viewport, ...newViewport });
+
+  useHandleResize(updateViewport);
 
   // Set map when loaded
   useEffect(() => {
@@ -70,7 +73,6 @@ const Map = (props) => {
         transformRequest={transformRequest}
         onLoad={() => setLoaded(true)}
         onViewportChange={updateViewport}
-        onResize={updateViewport}
         scrollZoom={false}
         dragPan={false}
         dragRotate={false}
