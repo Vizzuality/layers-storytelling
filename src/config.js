@@ -182,7 +182,7 @@ export default {
     {
       id: 'cerrado-2',
       title: 'A forgotten biodiversity hotspot',
-      image: 'chapter4_legend.png',
+      image: '',
       description:
         'Half of the Cerrado biome, one of the earth’s top biodiversity hotspots, has already been lost to cattle ranches and soy, corn and cotton plantations. Today, the savanna is losing its native vegetation faster than any part of Brazil, including the Amazon.',
       location: {
@@ -191,6 +191,25 @@ export default {
         pitch: 48.5,
         bearing: 29.42
       },
+      legend: [
+        {
+          title: 'Pasture lands in the Cerrado biome (2018)',
+          color: '#b1a51b'
+        },
+        {
+          title: 'Soy fields in the Cerrado biome (2014)',
+          color: '#ff6c2f'
+        },
+        {
+          title: 'Corn fields in the Cerrado biome (2014)',
+          color: '#cc607d'
+        },
+        {
+          title: 'Cotton fields in the Cerrado biome (2014)',
+          color: '#ffcc3e'
+        },
+      ],
+      sources: 'Sources: Laboratório de Processamento de Imagens e Geoprocessamento (LAPIG) da Universidade Federal de Goiás (UFG)',
       onChapterEnter: [
         {
           layer: 'pasture-cerrado-2018',
@@ -229,6 +248,10 @@ export default {
         bearing: 51.99
       },
       onChapterEnter: [
+        {
+          layer: 'Land-rights_1',
+          opacity: 0.3
+        },
         {
           layer: 'Tree-cover-loss-2001-2019',
           opacity: 0.3
