@@ -62,7 +62,7 @@ export default {
           type: 'circle'
         }
       ],
-      sources: 'Sources: ANTAQ (Ports), Trase.earth (storage facilities)',
+      sources: 'ANTAQ (Ports), Trase.earth (storage facilities)',
       images: [
         {
           src: 'port1.jpg',
@@ -110,7 +110,7 @@ export default {
         }
       ],
       sources:
-        'Sources: UND/Google/USGS/NASA (Tree cover loss), Global Forest Watch. "Land rights"',
+        'ND/Google/USGS/NASA (Tree cover loss), Global Forest Watch. "Land rights"',
       description:
         'The northward expansion of Amazon roadbuilding over recent decades opened truck/barge transit corridors to the Amazon River and Atlantic Ocean that run adjacent to Indigenous territories and cause deforestation. However, these northern routes, do let agribusiness bypass a long, rugged road journey, and the queues of trucks clogging Brazil’s southern ports at Paranaguá and Santos.',
       location: {
@@ -161,7 +161,7 @@ export default {
           color: '#92CE69'
         }
       ],
-      sources: 'Sources: Brasil Ministerio do Meio Ambiente / IGBE',
+      sources: 'Brasil Ministerio do Meio Ambiente / IGBE',
       onChapterEnter: [
         {
           layer: 'brazilbiomes-8y9982',
@@ -209,7 +209,7 @@ export default {
           color: '#ffcc3e'
         },
       ],
-      sources: 'Sources: Laboratório de Processamento de Imagens e Geoprocessamento (LAPIG) da Universidade Federal de Goiás (UFG)',
+      sources: 'Laboratório de Processamento de Imagens e Geoprocessamento (LAPIG) da Universidade Federal de Goiás (UFG)',
       onChapterEnter: [
         {
           layer: 'pasture-cerrado-2018',
