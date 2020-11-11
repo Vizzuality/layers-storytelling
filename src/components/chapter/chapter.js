@@ -41,10 +41,10 @@ function Chapter({ id, theme, title, image, images, description, currentChapterI
               border: l.border ? `solid 2px ${l.border}` : 'none'
             }}
           />
-          <span>{l.title}</span>
+          <span>{t(l.title)}</span>
         </div>
       ))}
-      {sources && <div className="ml-12">{t(sources)}</div>}
+      {sources && <div className="ml-12">{t('Sources')}: {t(sources)}</div>}
     </div>
   );
 
