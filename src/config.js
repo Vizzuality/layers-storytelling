@@ -110,7 +110,7 @@ export default {
         }
       ],
       sources:
-        'ND/Google/USGS/NASA (Tree cover loss), Global Forest Watch. "Land rights"',
+        'UMD/Google/USGS/NASA (Tree cover loss), Global Forest Watch. "Land rights"',
       description:
         'The northward expansion of Amazon roadbuilding over recent decades opened truck/barge transit corridors to the Amazon River and Atlantic Ocean that run adjacent to Indigenous territories and cause deforestation. However, these northern routes, do let agribusiness bypass a long, rugged road journey, and the queues of trucks clogging Brazil’s southern ports at Paranaguá and Santos.',
       location: {
@@ -143,8 +143,7 @@ export default {
     {
       id: 'cerrado',
       title: 'An agricultural heartland to the south',
-      description:
-        'In July 2006, major commodities companies working in Brazil voluntarily agreed to cease purchases of soy produced in any Amazon area deforested after that year. The Amazon Soy Moratorium was hugely successful, but critics say saving the rainforest was only possible because soy production shifted to the vast Cerrado savanna, which lies to the south and east of the Amazon basin.',
+      description: 'In July 2006, major commodities companies working in Brazil voluntarily agreed to cease purchases of soy produced in any Amazon area deforested after that year. The Amazon Soy Moratorium was hugely successful, but critics say saving the rainforest was only possible because soy production shifted to the vast Cerrado savanna, which lies to the south and east of the Amazon basin.',
       location: {
         center: [-52.74787, -14.10557],
         zoom: 4.63,
@@ -161,7 +160,15 @@ export default {
           color: '#92CE69'
         }
       ],
-      sources: 'Brasil Ministerio do Meio Ambiente / IGBE',
+      sources: 'Brazilian Ministry of Environment / IGBE',
+      images: [
+        {
+          src: 'cerrado_soy.png',
+          position: 'top',
+          title: 'Soy and its storage',
+          author: 'Thais Borges'
+        }
+      ],
       onChapterEnter: [
         {
           layer: 'brazilbiomes-8y9982',
@@ -182,7 +189,6 @@ export default {
     {
       id: 'cerrado-2',
       title: 'A forgotten biodiversity hotspot',
-      image: '',
       description:
         'Half of the Cerrado biome, one of the earth’s top biodiversity hotspots, has already been lost to cattle ranches and soy, corn and cotton plantations. Today, the savanna is losing its native vegetation faster than any part of Brazil, including the Amazon.',
       location: {
@@ -209,7 +215,7 @@ export default {
           color: '#ffcc3e'
         },
       ],
-      sources: 'Laboratório de Processamento de Imagens e Geoprocessamento (LAPIG) da Universidade Federal de Goiás (UFG)',
+      sources: 'Image Processing and Geoprocessing Laboratory (LAPIG) at the Federal University of Goiás (UFG)',
       onChapterEnter: [
         {
           layer: 'pasture-cerrado-2018',
@@ -242,11 +248,19 @@ export default {
       description:
         'Soy-loaded trucks travel from Mato Grosso state 1,000 kilometers (600 miles) along the BR-364 highway to the city of Porto Velho public port in Rondônia state. There, Hermasa, a subsidiary of agribusiness Amaggi, built silos in a leased portion of the public port, and moved soy from trucks to Madeira River barges. More recently, Hermasa built its own private port in the city. From Porto Velho, barges sail 1,000 kilometers downstream to a private Amaggi port at the city of Itacoatiara. From there, big ships travel downriver to the Atlantic coast and on to overseas markets.',
       location: {
-        center: [-63.86148, -8.81658],
-        zoom: 7.73,
-        pitch: 60.0,
-        bearing: 51.99
+        center: [-63.87170, -8.79644],
+        zoom: 8.52,
+        pitch: 50.50,
+        bearing: 40.11
       },
+      images: [
+        {
+          src: 'barge.png',
+          position: 'top',
+          title: 'Grain barge',
+          author: 'Thais Borges'
+        }
+      ],
       onChapterEnter: [
         {
           layer: 'Land-rights_1',
@@ -286,6 +300,14 @@ export default {
         pitch: 60.0,
         bearing: 101.56
       },
+      images: [
+        {
+          src: 'maica.png',
+          position: 'top',
+          title: 'Maicá Lake',
+          author: 'Carol Ferraz'
+        }
+      ],
       onChapterEnter: [],
       onChapterExit: []
     },
