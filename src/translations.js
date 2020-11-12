@@ -1,11 +1,11 @@
 export default {
   es: {
-    "Amazon Soy Ports": 'Puertos de soja en la Amazonía',
+    "Amazon Soy Ports": 'Puertos de soja de la Amazonía',
     "Investors are sinking hundreds of millions of dollars into private port facilities along the Amazon river and its tributaries to move agricultural commodities downriver from Brazil’s interior to the Atlantic coast and on to overseas markets":'Se invierten cientos de millones de dólares en instalaciones portuarias privadas a lo largo del río Amazonas y sus afluentes para trasladar productos agrícolas desde el interior de Brasil río abajo hasta la Costa Atlántica y hacia los mercados extranjeros',
     "Published": 'Publicado',
     "scroll down to discover": 'haz scroll para continuar',
     "Cartography by Willie Shubert for Mongabay.": 'Cartografía por Willie Shubert para Mongabay',
-    "Turning the Amazon river into an industrial waterway": 'Convirtiendo el rio amazonas en una vía navegable industrial',
+    "Turning the Amazon river into an industrial waterway": 'Transformando el río Rmazonas en una vía navegable industrial',
     "Brazil’s government has had major plans to exploit large portions of its 35,000-kilometers (22,000-miles) of waterways since the 1970s. Yet, it was mostly privately funded projects that went ahead. Today, the nation’s navigable waterways represent a third of its potential.":'Desde la década de 1970, el gobierno de Brasil ha tenido grandes planes para explotar extensas porciones de sus 35 000 kilómetros de vías fluviales. Sin embargo, fueron principalmente proyectos financiados con fondos privados los que siguieron adelante. Hoy en día, las vías navegables de la nación representan un tercio de su potencial',
     'Industrial port facilities on the Amazon River':'Instalaciones portuarias industriales en el río Amazonas',
     'Soy Storage Facilities':'Instalaciones de almacenamiento de soja',
