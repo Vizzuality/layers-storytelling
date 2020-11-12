@@ -9,7 +9,7 @@ export default {
     title: 'Amazon Soy Ports',
     subtitle:
       'Investors are sinking hundreds of millions of dollars into private port facilities along the Amazon river and its tributaries to move agricultural commodities downriver from Brazil’s interior to the Atlantic coast and on to overseas markets',
-    date: 'Nov. 10 2020',
+    date: 'Nov. 16 2020',
     social: [
       {
         name: 'twitter',
