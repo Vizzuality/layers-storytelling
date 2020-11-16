@@ -14,12 +14,12 @@ export default {
       {
         name: 'twitter',
         src: 'twitter.svg',
-        href: 'https://twitter.com/mongabay'
+        href: 'https://twitter.com/intent/tweet?text=Multiplying%20Amazon%20river%20ports%20open%20new%20Brazil-to-China%20commodities%20routes&url=https%3A%2F%2Fnews.mongabay.com/2020/11/multiplying-amazon-river-ports-open-new-brazil-to-china-commodities-routes&via=Mongabay'
       },
       {
         name: 'facebook',
         src: 'facebook.svg',
-        href: 'https://facebook.com/mongabay'
+        href: 'https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fnews.mongabay.com%/2020/11/multiplying-amazon-river-ports-open-new-brazil-to-china-commodities-routes'
       }
     ]
   },
@@ -132,7 +132,7 @@ export default {
       onChapterExit: [
         {
           layer: 'Land-rights_1',
-          opacity: 0
+          opacity: 0.3
         },
         {
           layer: 'Tree-cover-loss-2001-2019',
