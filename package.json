@@ -10,7 +10,7 @@
     "i18next-browser-languagedetector": "^6.0.1",
     "layer-manager": "^3.0.8",
     "luma.gl": "7.3.2",
-    "mapbox-gl": "1.5.0",
+    "mapbox-gl": "^1.12.0",
     "node-sass": "4.14.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
