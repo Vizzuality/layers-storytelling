@@ -2,8 +2,9 @@ import React from 'react';
 import cx from 'classnames';
 import './chapter.scss';
 import { useTranslation } from 'react-i18next';
+import { Waypoint } from 'react-waypoint';
 
-function Chapter({ id, theme, title, image, images, description, currentChapterId, legend, sources }) {
+function Chapter({ id, theme, title, image, images, description, currentChapterId, legend, sources, setCurrentChapter, setCurrentAction }) {
   const { t } = useTranslation();
 
   const stepClasses = 'step max-w-md opacity-25';
@@ -34,22 +35,39 @@ function Chapter({ id, theme, title, image, images, description, currentChapterI
       {legend.map((l) => (
         <div key={l.title} className="flex items-center mb-4">
           <span
-            className="w-8 h-8 mr-4"
+            className="legendItem w-8 h-8 mr-4"
             style={{
-              'borderRadius': l.type === 'circle' ? '50%' : 'none',
-              'backgroundColor': l.color,
+              borderRadius: l.type === 'circle' ? '50%' : 'none',
+              backgroundColor: l.color,
               border: l.border ? `solid 2px ${l.border}` : 'none'
             }}
           />
           <span>{t(l.title)}</span>
         </div>
       ))}
-      {sources && <div className="ml-12">{t('Sources')}: {t(sources)}</div>}
+      {sources && (
+        <div className="ml-12">
+          {t('Sources')}: {t(sources)}
+        </div>
+      )}
     </div>
   );
 
+  const onEnter = () => {
+    setCurrentChapter(id);
+    setCurrentAction('enter');
+  };
+  const onLeave= () => {
+    setCurrentChapter(id);
+    setCurrentAction('leave');
+  };
+
   return (
     <div id={id} className={classList}>
+      <Waypoint
+        onEnter={onEnter}
+        onLeave={onLeave}
+      />
       <div className={theme}>
         {images &&
           images.filter((i) => i.position === 'top').map((i) => renderImage(i))}

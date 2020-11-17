@@ -17,7 +17,7 @@
     "react-i18next": "^11.7.3",
     "react-map-gl": "^5.2.9",
     "react-scripts": "^3.3.0",
-    "scrollama": "2.0.1",
+    "react-waypoint": "^9.0.3",
     "tailwindcss": "^1.9.6",
     "viewport-mercator-project": "6.1.1"
   },
