@@ -5,7 +5,7 @@ export default {
     "Published": 'Publicado',
     "scroll down to discover": 'haz scroll para continuar',
     "Cartography by Willie Shubert for Mongabay.": 'Cartografía por Willie Shubert para Mongabay',
-    "Turning the Amazon river into an industrial waterway": 'Transformando el río Rmazonas en una vía navegable industrial',
+    "Turning the Amazon river into an industrial waterway": 'Transformando el río Amazonas en una vía navegable industrial',
     "Brazil’s government has had major plans to exploit large portions of its 35,000-kilometers (22,000-miles) of waterways since the 1970s. Yet, it was mostly privately funded projects that went ahead. Today, the nation’s navigable waterways represent a third of its potential.":'Desde la década de 1970, el gobierno de Brasil ha tenido grandes planes para explotar extensas porciones de sus 35 000 kilómetros de vías fluviales. Sin embargo, fueron principalmente proyectos financiados con fondos privados los que siguieron adelante. Hoy en día, las vías navegables de la nación representan un tercio de su potencial',
     'Industrial port facilities on the Amazon River':'Instalaciones portuarias industriales en el río Amazonas',
     'Soy Storage Facilities':'Instalaciones de almacenamiento de soja',
