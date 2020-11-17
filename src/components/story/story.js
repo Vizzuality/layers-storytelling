@@ -10,7 +10,7 @@ const alignments = {
   right: 'righty'
 };
 
-const Story = ({ title, subtitle, byline, theme, chapters, alignment, currentChapterId, footer, hasIntro }) => {
+const Story = ({ title, subtitle, byline, theme, chapters, alignment, currentChapterId, footer, hasIntro, setCurrentChapter, setCurrentAction }) => {
   const { t } = useTranslation();
 
   return (
@@ -29,6 +29,8 @@ const Story = ({ title, subtitle, byline, theme, chapters, alignment, currentCha
             theme={theme}
             {...chapter}
             currentChapterId={currentChapterId}
+            setCurrentChapter={setCurrentChapter}
+            setCurrentAction={setCurrentAction}
           />
         ))}
       </div>

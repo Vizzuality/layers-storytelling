@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './app.scss';
 import Story from './components/story/story';
 import Map from './components/map/map';
-import Scroller from './components/scroller/scroller';
 import Intro from './components/intro/intro';
 import Logos from './components/logos/logos';
 
@@ -21,18 +20,11 @@ const App = (props) => {
     intro,
     logos
   } = props;
-  const [currentChapter, setCurrentChapter] = useState(chapters[0]);
+  const [currentChapterId, setCurrentChapter] = useState(chapters[0]);
   const [currentAction, setCurrentAction] = useState();
-
-  const { id: currentChapterId } = currentChapter;
 
   return (
     <div>
-      <Scroller
-        chapters={chapters}
-        setCurrentChapter={setCurrentChapter}
-        setCurrentAction={setCurrentAction}
-      />
       {intro && <Intro {...intro} />}
       <Logos logos={logos}/>
       <Story
@@ -45,10 +37,11 @@ const App = (props) => {
         alignment={alignment}
         currentChapterId={currentChapterId}
         footer={footer}
+        setCurrentChapter={setCurrentChapter}
+        setCurrentAction={setCurrentAction}
       />
       <Map
         chapters={chapters}
-        setCurrentChapter={setCurrentChapter}
         currentAction={currentAction}
         accessToken={accessToken}
         mapStyle={style}
