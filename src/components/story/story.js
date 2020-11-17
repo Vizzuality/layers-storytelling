@@ -35,7 +35,7 @@ const Story = ({ title, subtitle, byline, theme, chapters, alignment, currentCha
         ))}
       </div>
       {footer && (
-        <div id="footer" className={`footer-${theme}`}>
+        <div id="footer" className={`footer-${theme} p-4 pb-16 w-full text-right text-base`}>
           <p>{t(footer)}</p>
         </div>
       )}
