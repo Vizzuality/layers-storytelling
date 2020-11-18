@@ -17,7 +17,6 @@ i18n
     keySeparator: false,
 
     fallbackLng: 'en',
-    debug: true,
 
     // have a common namespace used around the full app
     ns: ['translations'],

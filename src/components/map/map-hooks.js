@@ -36,7 +36,7 @@ export const useScrollFunctionality = ({
           externalLayersIds
         );
       }
-      if (currentChapterId && currentAction === 'exit') {
+      if (currentChapterId && currentAction === 'leave') {
         const chapter = chapters.find((c) => c.id === currentChapterId);
         setOpacityOnAction(
           chapter,
