@@ -1,6 +1,11 @@
-# layers-storytelling
+# Layers-storytelling
 
 Integrates [Vizzuality's Layer manager](https://github.com/Vizzuality/layer-manager) with [mapbox/storytelling](https://github.com/mapbox/storytelling) to be able to display external layers
+
+## Examples
+
+[Amazon soy ports story](https://news.mongabay.com/2020/11/multiplying-amazon-river-ports-open-new-brazil-to-china-commodities-routes) - [Just the app](amazon-ports-storytelling.vercel.app)
+
 
 ## Instructions
 
