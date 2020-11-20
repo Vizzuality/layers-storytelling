@@ -4,10 +4,10 @@ import './index.css';
 import App from './app';
 import * as serviceWorker from './serviceWorker';
 import config from './config.js';
+import './tailwind.output.css';
+import './i18n';
 
-
-
-ReactDOM.render(<App {...config}/>, document.getElementById('root'));
+ReactDOM.render(<App {...config} />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
