@@ -4,7 +4,7 @@ Integrates [Vizzuality's Layer manager](https://github.com/Vizzuality/layer-mana
 
 ## Examples
 
-[Amazon soy ports story](https://news.mongabay.com/2020/11/multiplying-amazon-river-ports-open-new-brazil-to-china-commodities-routes) - [Just the app](amazon-ports-storytelling.vercel.app)
+[Amazon soy ports story](https://news.mongabay.com/2020/11/multiplying-amazon-river-ports-open-new-brazil-to-china-commodities-routes) - [Just the app](http://amazon-ports-storytelling.vercel.app)
 
 
 ## Instructions
