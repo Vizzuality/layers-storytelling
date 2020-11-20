@@ -6,11 +6,12 @@ Integrates [Vizzuality's Layer manager](https://github.com/Vizzuality/layer-mana
 
 - Copy .env.template and rename it to .env
 - Add Mapbox [access token](https://docs.mapbox.com/help/glossary/access-token) to the new .env
-- Update config.js with the desired chapters and layers
+- Update config.js with the desired chapters, layers and mapbox style
 - External layers config should be specified on the map-external-layers.js file
 - Update index.html and manifest.json inside public folder to update title and SEO
 
 ## Config
+  Images must be placed on public folder. Background intro image is intro.png. It can be removed to have a transparent intro background.
 
   Definition of the chapter options on the config file:
 
@@ -109,6 +110,10 @@ export default {
   }
 };
 ```
+
+## Iframe test
+
+You can enter /test folder and use some [simple server](https://www.npmjs.com/package/http-server)(https://www.npmjs.com/package/http-server) to test the application on an iframe
 
 ## Installation and dependencies
 
