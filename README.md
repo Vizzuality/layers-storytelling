@@ -2,6 +2,8 @@
 
 Integrates [Vizzuality's Layer manager](https://github.com/Vizzuality/layer-manager) with [mapbox/storytelling](https://github.com/mapbox/storytelling) to be able to display external layers
 
+The external layers have to be written in Layer Manager v3. Currently there is a parser implemented to also automatically convert resource-watch LM v2 layers into v3 but only for carto and raster layers.
+
 ## Examples
 
 [Amazon soy ports story](https://news.mongabay.com/2020/11/multiplying-amazon-river-ports-open-new-brazil-to-china-commodities-routes) - [Just the app](http://amazon-ports-storytelling.vercel.app)
