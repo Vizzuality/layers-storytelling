@@ -41,18 +41,53 @@ export default {
   chapters: [
     {
       id: 'amazon-region',
-      title: 'Turning the Amazon river into an industrial waterway',
-      legend: [
+      title: 'Test',
+      image: '',
+      description:
+        'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+      location: {
+        center: [-58.0283, -2.7068],
+        zoom: 4.42,
+        pitch: 0.0,
+        bearing: -8.78
+      },
+      onChapterEnter: [
         {
-          title: 'Industrial port facilities in the Amazon basin',
-          color: '#7259A8',
-          border: 'black',
-          type: 'circle'
+          layer: 'tree-cover',
+          opacity: 1
         },
         {
-          title: 'Soy Storage Facilities',
-          color: '#BAA4F5',
-          type: 'circle'
+          layer: 'overall-environmental-democracy-index-score',
+          opacity: 1
+        }
+      ],
+      onChapterExit: [
+        {
+          layer: 'tree-cover',
+          opacity: 0
+        },
+        {
+          layer: 'overall-environmental-democracy-index-score',
+          opacity: 0
+        }
+      ]
+    },
+    {
+      id: 'amazon-logistics',
+      title: 'Logistics hubs in the Amazon',
+      image: '',
+      description:
+        'in July 2006, in an agreement between major trading companies working in Brazil that they would not buy soy from any area that was deforested after 2006. This agreement is the Soy Moratorium. The program was hugely successful but critics say this transformation was only possible because the Cerrado biome, which enjoys fewer protections, was right next to the forest. and could take in the growth that would otherwise have spread through the rainforest.',
+      location: {
+        center: [-56.67828, -5.98458],
+        zoom: 5.09,
+        pitch: 40.5,
+        bearing: -22.38
+      },
+      onChapterEnter: [
+        {
+          layer: 'soy-storage-facilities',
+          opacity: 1
         }
       ],
       sources: 'ANTAQ (Ports), Trase.earth (storage facilities)',
@@ -62,24 +97,6 @@ export default {
           position: 'top',
           title: 'Santarém port',
           author: 'Thais Borges'
-        }
-      ],
-      description:
-        'Brazil’s government has had major plans to exploit large portions of its 35,000-kilometers (22,000-miles) of waterways since the 1970s. Yet, it was mostly privately funded projects that went ahead. Today, the nation’s navigable waterways represent a third of its potential.',
-      location: {
-        center: [-57.15869, -3.85456],
-        zoom: 4.7,
-        pitch: 43.5,
-        bearing: 54.23
-      },
-      onChapterEnter: [
-        {
-          layer: 'amazon-ports',
-          opacity: 1
-        },
-        {
-          layer: 'soy-storage-facilities',
-          opacity: 1
         }
       ],
       onChapterExit: [

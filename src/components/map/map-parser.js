@@ -80,7 +80,6 @@ const parseTiles = (layer) => {
   if (url) {
     updatedConfig.source.tiles = [url];
   }
-  console.log('sss', layerConfig, updatedConfig);
   if (layerConfig.body.minZoom) {
     updatedConfig.source.minzoom = get(layerConfig, 'body.minZoom');
   }
@@ -129,7 +128,7 @@ export const layerV2ToV3Parser = (v2Config) => {
   return v2Config;
 };
 
-const needsParsing = (layerConfig) => !layerConfig.source;
+const needsParsing = (layerConfig) => !get(layerConfig, 'attributes.layerConfig.source');
 
 export const parsedLayerConfig = (layerConfig) => {
   if (!needsParsing(layerConfig)) return layerConfig;
