@@ -24,7 +24,6 @@ const App = (props) => {
   const [currentAction, setCurrentAction] = useState();
 
   const renderError = (missing) => <div className="flex justify-center items-center h-screen">Please add the missing {missing}. Check the Readme</div>;
-  console.log({ style }, accessToken)
   if (style === 'ADD YOUR MAPBOX STYLE HERE') {
     return renderError('Mapbox map style');
   }

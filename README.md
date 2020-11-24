@@ -2,6 +2,8 @@
 
 Integrates [Vizzuality's Layer manager](https://github.com/Vizzuality/layer-manager) with [mapbox/storytelling](https://github.com/mapbox/storytelling) to be able to display external layers
 
+The external layers have to be written in Layer Manager v3. Currently there is a parser implemented to also automatically convert resource-watch LM v2 layers into v3 but only for carto and raster layers.
+
 ## Examples
 
 [Amazon soy ports story](https://news.mongabay.com/2020/11/multiplying-amazon-river-ports-open-new-brazil-to-china-commodities-routes) - [Just the app](http://amazon-ports-storytelling.vercel.app)
@@ -12,7 +14,20 @@ Integrates [Vizzuality's Layer manager](https://github.com/Vizzuality/layer-mana
 - Copy .env.template and rename it to .env
 - Add Mapbox [access token](https://docs.mapbox.com/help/glossary/access-token) to the new .env
 - Update config.js with the desired chapters, layers and mapbox style
-- External layers config should be specified on the map-external-layers.js file
+- External layers config should be specified on the map-external-layers.js file:
+  For resource-watch layers. There is an automated way to fetch the layers
+
+```
+
+  {
+    id: '0448c79d-0ee0-42ff-9331-aeee70cef301', // Id of the DATASET on resource watch
+    slug: 'tree-cover', // New slug to call the layer in config.js
+    source: 'resource-watch' // This is needed for resource-watch layers
+    //   decodeParams: ... // optional
+    //   decodeFunction: ... // optional
+  }
+```
+
 - Update index.html and manifest.json inside public folder to update title and SEO
 
 ## Config

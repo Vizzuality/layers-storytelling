@@ -8,6 +8,8 @@ export const layerTypes = {
 };
 
 const getLayerPaintType = (layer, map) => {
+  const mapLayer = map.getLayer(layer);
+  if (!mapLayer) return [];
   const layerType = map.getLayer(layer).type;
   return layerTypes[layerType];
 };
