@@ -52,24 +52,8 @@ export default {
         bearing: -8.78
       },
       onChapterEnter: [
-        {
-          layer: 'tree-cover',
-          opacity: 1
-        },
-        {
-          layer: 'overall-environmental-democracy-index-score',
-          opacity: 1
-        }
       ],
       onChapterExit: [
-        {
-          layer: 'tree-cover',
-          opacity: 0
-        },
-        {
-          layer: 'overall-environmental-democracy-index-score',
-          opacity: 0
-        }
       ]
     },
     {
