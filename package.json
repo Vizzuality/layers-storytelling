@@ -18,7 +18,8 @@
     "react-scripts": "^3.3.0",
     "react-waypoint": "^9.0.3",
     "tailwindcss": "^1.9.6",
-    "viewport-mercator-project": "6.1.1"
+    "viewport-mercator-project": "6.1.1",
+    "worker-loader": "^3.0.8"
   },
   "scripts": {
     "build:tailwind": "tailwindcss build src/tailwind.css -o src/tailwind.output.css",

@@ -5,6 +5,10 @@ import { LayerManager, Layer } from 'layer-manager/dist/components';
 import { PluginMapboxGl } from 'layer-manager';
 import { useScrollFunctionality, useHandleResize } from './map-hooks';
 import ReactMapGL, { Marker } from 'react-map-gl';
+import mapboxgl from "mapbox-gl"; // This is a dependency of react-map-gl even if you didn't explicitly install it
+
+// eslint-disable-next-line import/no-webpack-loader-syntax
+mapboxgl.workerClass = require("worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker").default;
 
 const Map = (props) => {
   const { chapters, accessToken, mapStyle, showMarkers, setCurrentChapter, externalLayers, currentChapterId, currentAction } = props;
