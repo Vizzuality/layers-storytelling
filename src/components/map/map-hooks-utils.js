@@ -16,6 +16,7 @@ const getLayerPaintType = (layer, map) => {
 
 const setLayerOpacity = (layer, map) => {
   const paintProps = getLayerPaintType(layer.layer, map);
+  if (!paintProps?.length) return;
   paintProps.forEach((prop) => {
     map.setPaintProperty(layer.layer, prop, layer.opacity);
   });

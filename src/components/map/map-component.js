@@ -20,11 +20,13 @@ const Map = (props) => {
     longitude: initialLongitude
   });
   const initialViewport = {
-    latitude: initialLatitude,
-    longitude: initialLongitude,
-    pitch: initialLocation.pitch,
-    bearing: initialLocation.bearing,
-    zoom: initialLocation.zoom
+    initialViewState: {
+      latitude: initialLatitude,
+      longitude: initialLongitude,
+      pitch: initialLocation.pitch,
+      bearing: initialLocation.bearing,
+      zoom: initialLocation.zoom
+    }
   };
   const [viewport, setViewport] = useState(initialViewport);
   const updateViewport = (newViewport) =>
